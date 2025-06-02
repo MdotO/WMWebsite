@@ -1,6 +1,6 @@
-# AquaFlow Solutions Website
+# John P. Williams Plant Website
 
-A professional corporate website for AquaFlow Solutions, a water waste management company.
+A professional corporate website for John P. Williams Plant Solutions, a water waste management company.
 
 ## Project Overview
 
