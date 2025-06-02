@@ -218,7 +218,7 @@ const Footer = () => {
         
         <Box sx={{ textAlign: 'center' }}>
           <Typography variant="body2" sx={{ opacity: 0.8 }}>
-            © 2024 {siteContent.company.name}. All rights reserved.
+            © 2025 {siteContent.company.name}. All rights reserved.
           </Typography>
           <Typography variant="body2" sx={{ opacity: 0.6, mt: 1 }}>
             Built with React & Material-UI | Designed for Environmental Excellence
