@@ -92,7 +92,7 @@ const Home = () => {
         <Container maxWidth="lg">
           <Grid container spacing={4} textAlign="center">
             <Grid item xs={12} md={3}>
-              <Typography variant="h2" sx={{ fontWeight: 700, mb: 1 }}>
+              <Typography variant="h3_white" sx={{ fontWeight: 700, mb: 1 }}>
                 500+
               </Typography>
               <Typography variant="h6">
@@ -100,7 +100,7 @@ const Home = () => {
               </Typography>
             </Grid>
             <Grid item xs={12} md={3}>
-              <Typography variant="h2" sx={{ fontWeight: 700, mb: 1 }}>
+              <Typography variant="h3_white" sx={{ fontWeight: 700, mb: 1 }}>
                 50M+
               </Typography>
               <Typography variant="h6">
@@ -108,7 +108,7 @@ const Home = () => {
               </Typography>
             </Grid>
             <Grid item xs={12} md={3}>
-              <Typography variant="h2" sx={{ fontWeight: 700, mb: 1 }}>
+              <Typography variant="h3_white" sx={{ fontWeight: 700, mb: 1 }}>
                 15+
               </Typography>
               <Typography variant="h6">
@@ -116,7 +116,7 @@ const Home = () => {
               </Typography>
             </Grid>
             <Grid item xs={12} md={3}>
-              <Typography variant="h2" sx={{ fontWeight: 700, mb: 1 }}>
+              <Typography variant="h3_white" sx={{ fontWeight: 700, mb: 1 }}>
                 100%
               </Typography>
               <Typography variant="h6">
