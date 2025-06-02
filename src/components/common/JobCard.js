@@ -111,7 +111,7 @@ const JobCard = ({
             variant="contained"
             fullWidth
             startIcon={<Email />}
-            href={`mailto:${applicationEmail || 'careers@aquaflowsolutions.com'}?subject=Application for ${title}`}
+            href={`mailto:${applicationEmail || 'careers@jpwilliams.com'}?subject=Application for ${title}`}
             sx={{
               py: 1.5,
               borderRadius: 2,

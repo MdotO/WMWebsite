@@ -2,10 +2,10 @@ import { imageAssets } from './imageAssets';
 
 export const siteContent = {
   company: {
-    name: "AquaFlow Solutions",
+    name: "John P. Williams Plant",
     tagline: "Leading Water Waste Management Excellence",
     contact: {
-      email: "info@aquaflowsolutions.com",
+      email: "info@jpwilliams.com",
       phone: "+1 (555) 123-4567",
       address: "123 Water Street, Clean City, CC 12345"
     }
@@ -18,16 +18,16 @@ export const siteContent = {
       backgroundImage: imageAssets.hero.home
     },
     ceoMessage: {
-      name: "Sarah Johnson",
+      name: "John P. Williams",
       title: "Chief Executive Officer",
-      message: "At AquaFlow Solutions, we are committed to creating innovative and sustainable water management solutions that protect our environment while meeting the needs of our communities.",
+      message: "At John P. Williams Plant, we are committed to creating innovative and sustainable water management solutions that protect our environment while meeting the needs of our communities.",
       image: imageAssets.staff.ceo
     }
   },
 
   aboutUs: {
-    title: "About AquaFlow Solutions",
-    description: "Founded in 2015, AquaFlow Solutions has been at the forefront of water waste management innovation. We specialize in developing cutting-edge technologies and sustainable practices that help communities and businesses reduce their water footprint while maintaining operational efficiency. Our team of experts combines years of experience with the latest environmental science to deliver solutions that make a real difference.",
+    title: "About John P. Williams Plant",
+    description: "Founded in 20XX, John P.Williams Plant has been at the forefront of water waste management innovation. We specialize in developing cutting-edge technologies and sustainable practices that help communities and businesses reduce their water footprint while maintaining operational efficiency. Our team of experts combines years of experience with the latest environmental science to deliver solutions that make a real difference.",
     mission: "To provide innovative, sustainable water waste management solutions that protect our environment and support community growth.",
     vision: "A world where every drop of water is valued, managed, and preserved for future generations.",
     backgroundImage: imageAssets.hero.about
@@ -40,7 +40,7 @@ export const siteContent = {
       title: "Chief Technology Officer",
       image: imageAssets.staff.michael,
       message: "Leading our research and development initiatives to create next-generation water treatment technologies.",
-      email: "m.chen@aquaflowsolutions.com",
+      email: "m.chen@ajpwilliams.com",
       department: "Technology"
     },
     {
@@ -49,7 +49,7 @@ export const siteContent = {
       title: "Operations Director",
       image: imageAssets.staff.jennifer,
       message: "Ensuring seamless project execution and maintaining our high standards of service delivery.",
-      email: "j.martinez@aquaflowsolutions.com",
+      email: "j.martinez@jpwilliams.com",
       department: "Operations"
     },
     {
@@ -58,7 +58,7 @@ export const siteContent = {
       title: "Environmental Compliance Manager",
       image: imageAssets.staff.robert,
       message: "Keeping our operations in full compliance with environmental regulations and best practices.",
-      email: "r.thompson@aquaflowsolutions.com",
+      email: "r.thompson@jpwilliams.com",
       department: "Compliance"
     },
     {
@@ -67,7 +67,7 @@ export const siteContent = {
       title: "Research Scientist",
       image: imageAssets.staff.lisa,
       message: "Developing innovative solutions through cutting-edge research in water treatment technologies.",
-      email: "l.wang@aquaflowsolutions.com",
+      email: "l.wang@jpwilliams.com",
       department: "Research"
     }
   ],

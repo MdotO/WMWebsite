@@ -34,7 +34,7 @@ export const imageAssets = {
   // Placeholders
   placeholders: {
     avatar: 'https://via.placeholder.com/400x400/1976d2/ffffff?text=Staff',
-    hero: 'https://via.placeholder.com/1920x1080/1976d2/ffffff?text=AquaFlow+Solutions',
+    hero: 'https://via.placeholder.com/1920x1080/1976d2/ffffff?text=John+P.+Williams+Plant',
     card: 'https://via.placeholder.com/800x600/1976d2/ffffff?text=Image',
   },
 };
