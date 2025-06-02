@@ -23,7 +23,7 @@ const OptimizedImage = ({
   };
 
   // Fallback placeholder image
-  const placeholderSrc = placeholder || `https://via.placeholder.com/${width || 400}x${height || 300}/1976d2/ffffff?text=AquaFlow`;
+  const placeholderSrc = placeholder || `https://via.placeholder.com/${width || 400}x${height || 300}/1976d2/ffffff?text=JohnP.WilliamsPlant`;
 
   return (
     <Box
@@ -60,7 +60,6 @@ const OptimizedImage = ({
           objectFit: 'cover',
           opacity: isLoading ? 0 : 1,
           transition: 'opacity 0.3s ease-in-out',
-          ...sx,
         }}
         {...props}
       />

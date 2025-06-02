@@ -52,7 +52,7 @@ const Staff = () => {
       {/* Hero Section */}
       <FeatureBanner
         title="Our Leadership Team"
-        subtitle="Meet the Experts Behind AquaFlow Solutions" 
+        subtitle="Meet the Experts Behind John P. Williams Plant" 
         description="Our experienced team of professionals brings together decades of expertise in water management, environmental science, and sustainable technology."
         backgroundImage={imageAssets.hero.staff}
         primaryAction={{
@@ -153,7 +153,7 @@ const Staff = () => {
               align="left"
             />
             <Typography variant="body1" sx={{ mb: 3, lineHeight: 1.7 }}>
-              At AquaFlow Solutions, we believe that great leadership comes from empowering our team members 
+              At John P. Williams Plant, we believe that great leadership comes from empowering our team members 
               to innovate, collaborate, and excel in their respective fields. Our flat organizational structure 
               encourages open communication and rapid decision-making.
             </Typography>
@@ -172,7 +172,7 @@ const Staff = () => {
                 textAlign: 'center',
               }}
             >
-              <Typography variant="h3" gutterBottom sx={{ fontWeight: 700 }}>
+              <Typography variant="h3_white" gutterBottom sx={{ fontWeight: 700 }}>
                 25+
               </Typography>
               <Typography variant="h6" gutterBottom>
@@ -190,7 +190,7 @@ const Staff = () => {
       {/* Call to Action */}
       <Box sx={{ backgroundColor: 'secondary.main', color: 'white', py: 8 }}>
         <Container maxWidth="md" sx={{ textAlign: 'center' }}>
-          <Typography variant="h3" gutterBottom sx={{ fontWeight: 600 }}>
+          <Typography variant="h3_white" gutterBottom sx={{ fontWeight: 600 }}>
             Want to Join Our Team?
           </Typography>
           <Typography variant="h6" sx={{ mb: 4, opacity: 0.9 }}>

@@ -162,7 +162,7 @@ const Home = () => {
           
           <Box sx={{ flex: 1, textAlign: { xs: 'center', lg: 'left' } }}>
             <Typography 
-              variant="h4" 
+              variant="h4"
               gutterBottom 
               sx={{ fontWeight: 600, color: 'primary.main' }}
             >
@@ -183,14 +183,6 @@ const Home = () => {
                 lineHeight: 1.6,
                 color: 'text.primary',
                 position: 'relative',
-                '&::before': {
-                  content: '"',
-                  fontSize: '4rem',
-                  color: 'primary.light',
-                  position: 'absolute',
-                  left: -20,
-                  top: -10,
-                },
               }}
             >
               {home.ceoMessage.message}
@@ -206,7 +198,7 @@ const Home = () => {
             Ready to Transform Your Water Management?
           </Typography>
           <Typography variant="h6" color="text.secondary" sx={{ mb: 4 }}>
-            Join hundreds of satisfied clients who trust AquaFlow Solutions for their water waste management needs.
+            Join hundreds of satisfied clients who trust John P. Williams Plant for their water waste management needs.
           </Typography>
           <Box sx={{ display: 'flex', gap: 2, justifyContent: 'center', flexWrap: 'wrap' }}>
             <Button

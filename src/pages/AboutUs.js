@@ -97,7 +97,7 @@ const AboutUs = () => {
           <Grid item xs={12} md={6}>
             <OptimizedImage
               src={imageAssets.backgrounds.laboratory}
-              alt="AquaFlow Solutions Laboratory"
+              alt="John P. Williams Plant Laboratory"
               sx={{
                 borderRadius: 3,
                 boxShadow: '0 12px 24px rgba(0,0,0,0.15)',
@@ -197,7 +197,7 @@ const AboutUs = () => {
       </Container>
 
       {/* Achievements Section */}
-      <Box sx={{ backgroundColor: 'primary.main', color: 'white', py: 10 }}>
+      <Box sx={{ backgroundColor: 'white', color: 'white', py: 10 }}>
         <Container maxWidth="lg">
           <SectionHeader
             title="Our Achievements"

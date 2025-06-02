@@ -108,7 +108,7 @@ const Careers = () => {
       {/* Why Work With Us Section */}
       <Container maxWidth="lg" sx={{ py: 10 }}>
         <SectionHeader
-          title="Why AquaFlow Solutions?"
+          title="Why John P. Williams Plant?"
           subtitle="More than just a job - it's a mission"
         />
         
@@ -270,7 +270,7 @@ const Careers = () => {
                   type={job.type}
                   description={job.description}
                   requirements={job.requirements}
-                  applicationEmail="careers@aquaflowsolutions.com"
+                  applicationEmail="careers@jpwilliams.com"
                 />
               </Grid>
             ))
@@ -301,7 +301,7 @@ const Careers = () => {
             <Button
               variant="contained"
               size="large"
-              href="mailto:careers@aquaflowsolutions.com?subject=General Application"
+              href="mailto:careers@jpwilliams.com?subject=General Application"
               sx={{
                 backgroundColor: 'white',
                 color: 'primary.main',
@@ -321,11 +321,11 @@ const Careers = () => {
         <Container maxWidth="lg">
           <Grid container spacing={6} alignItems="center">
             <Grid item xs={12} md={6}>
-              <Typography variant="h3" gutterBottom sx={{ fontWeight: 600 }}>
+              <Typography variant="h3_white" gutterBottom sx={{ fontWeight: 600 }}>
                 Our Culture
               </Typography>
               <Typography variant="h6" sx={{ mb: 3, opacity: 0.9 }}>
-                At AquaFlow Solutions, we foster an environment of collaboration, innovation, and environmental responsibility.
+                At John P. Williams Plant, we foster an environment of collaboration, innovation, and environmental responsibility.
               </Typography>
               <List>
                 <ListItem sx={{ px: 0 }}>
