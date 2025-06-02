@@ -28,7 +28,7 @@ const theme = createTheme({
     h1: {
       fontSize: '2.5rem',
       fontWeight: 600,
-      color: '#1976d2',
+      color: '#ffffff',
     },
     h2: {
       fontSize: '2rem',
@@ -39,6 +39,11 @@ const theme = createTheme({
       fontSize: '1.5rem',
       fontWeight: 500,
       color: '#1976d2',
+    },
+    h3_white: {
+      fontSize: '1.5rem',
+      fontWeight: 500,
+      color: '#ffffff',
     },
     h4: {
       fontSize: '1.25rem',
