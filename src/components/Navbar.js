@@ -29,7 +29,7 @@ const Navbar = () => {
   const menuItems = [
     { label: 'Home', path: '/', exact: true },
     { label: 'About Us', path: '/about' },
-    { label: 'Administration Staff', path: '/staff' },
+    { label: 'Our Team', path: '/staff' },
     { label: 'Careers', path: '/careers' },
   ];
 

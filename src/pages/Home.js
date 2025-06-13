@@ -6,7 +6,7 @@ import {
   Grid,
   Button,
 } from '@mui/material';
-import { Water, Nature, Engineering, ArrowForward } from '@mui/icons-material';
+import { Water, Nature, Engineering, ArrowForward, Public } from '@mui/icons-material';
 import { siteContent } from '../data/siteContent';
 import { 
   FeatureBanner, 
@@ -21,22 +21,21 @@ const Home = () => {
   const services = [
     {
       title: "Water Treatment",
-      description: "Advanced filtration and purification systems designed to meet the highest environmental standards.",
+      description: "Advanced integrated water treatment systems combining mechanical systems with biological processes to achieve efficient, sustainable purification that meets stringent environmental standards.",
       icon: <Water sx={{ fontSize: 32 }} />,
       iconColor: 'primary.main',
     },
     {
       title: "Environmental Compliance",
-      description: "Ensuring all operations meet or exceed environmental regulations and sustainability goals.",
+      description: "Ensuring all water treatment operations systematically meet, verify, and exceed rigorous environmental compliance standards while achieving measurable sustainability performance benchmarks.",
       icon: <Nature sx={{ fontSize: 32 }} />,
-      iconColor: 'secondary.main',
-      featured: true,
+      iconColor: 'primary.main',
     },
     {
-      title: "Custom Solutions",
-      description: "Tailored engineering solutions designed specifically for your unique water management challenges.",
-      icon: <Engineering sx={{ fontSize: 32 }} />,
-      iconColor: 'primary.dark',
+      title: "Public Safeguard",
+      description: "Ensuring uninterrupted wastewater treatment to protect the city of Portage's public health, residential sanitation, and environmental compliance through reliable 24/7 operations.",
+      icon: <Public sx={{ fontSize: 32 }} />,
+      iconColor: 'primary.main',
     },
   ];
 
@@ -64,8 +63,8 @@ const Home = () => {
       <Container maxWidth="lg" sx={{ py: 10 }} id="services">
         <SectionHeader
           title="Our Expertise"
-          subtitle="Comprehensive water waste management solutions"
-          description="We combine cutting-edge technology with environmental stewardship to deliver sustainable solutions that protect our water resources while meeting operational needs."
+          subtitle="Comprehensive waste water management solutions"
+          description="At the John P. Williams Plant, we blend biological insight with mechanical precision to protect our community’s water. Every process — from sludge handling to nutrient removal — is driven by a commitment to sustainability, public health, and operational excellence."
         />
         
         <Grid container spacing={4}>
@@ -93,23 +92,7 @@ const Home = () => {
           <Grid container spacing={4} textAlign="center">
             <Grid item xs={12} md={3}>
               <Typography variant="h2" sx={{ fontWeight: 700, mb: 1 }}>
-                500+
-              </Typography>
-              <Typography variant="h6">
-                Projects Completed
-              </Typography>
-            </Grid>
-            <Grid item xs={12} md={3}>
-              <Typography variant="h2" sx={{ fontWeight: 700, mb: 1 }}>
-                50M+
-              </Typography>
-              <Typography variant="h6">
-                Gallons Treated Daily
-              </Typography>
-            </Grid>
-            <Grid item xs={12} md={3}>
-              <Typography variant="h2" sx={{ fontWeight: 700, mb: 1 }}>
-                15+
+                30+
               </Typography>
               <Typography variant="h6">
                 Years of Excellence
@@ -117,10 +100,26 @@ const Home = () => {
             </Grid>
             <Grid item xs={12} md={3}>
               <Typography variant="h2" sx={{ fontWeight: 700, mb: 1 }}>
+                4M+
+              </Typography>
+              <Typography variant="h6">
+                Gallons Treated Daily
+              </Typography>
+            </Grid>
+            <Grid item xs={12} md={3}>
+              <Typography variant="h2" sx={{ fontWeight: 700, mb: 1 }}>
                 100%
               </Typography>
               <Typography variant="h6">
-                Compliance Rate
+                Compliance rate
+              </Typography>
+            </Grid>
+            <Grid item xs={12} md={3}>
+              <Typography variant="h2" sx={{ fontWeight: 700, mb: 1 }}>
+                95.7% Score
+              </Typography>
+              <Typography variant="h6">
+                IWEA Lab Excellence Award 2025
               </Typography>
             </Grid>
           </Grid>
@@ -131,7 +130,7 @@ const Home = () => {
       <Container maxWidth="lg" sx={{ py: 10 }}>
         <SectionHeader
           title="Leadership Message"
-          subtitle="A word from our Chief Executive Officer"
+          subtitle="A word from our Mayor"
         />
         
         <Box 
@@ -195,10 +194,10 @@ const Home = () => {
       <Box sx={{ backgroundColor: 'background.default', py: 10 }}>
         <Container maxWidth="md" sx={{ textAlign: 'center' }}>
           <Typography variant="h3" gutterBottom sx={{ fontWeight: 600 }}>
-            Ready to Transform Your Water Management?
+            Ready to Elevate Your City's Water Treatment?
           </Typography>
           <Typography variant="h6" color="text.secondary" sx={{ mb: 4 }}>
-            Join hundreds of satisfied clients who trust John P. Williams Plant for their water waste management needs.
+            Here, we serve the community with trusted, sustainable, and expertly engineered and bilogocally focussed wastewater solutions — helping protect public health and the environment every single day.
           </Typography>
           <Box sx={{ display: 'flex', gap: 2, justifyContent: 'center', flexWrap: 'wrap' }}>
             <Button

@@ -8,7 +8,7 @@ import {
   CardContent,
   Chip,
 } from '@mui/material';
-import { Business, Science, Engineering, Gavel } from '@mui/icons-material';
+import { Business, Science, Engineering, Gavel, WaterDrop } from '@mui/icons-material';
 import { siteContent } from '../data/siteContent';
 import { 
   FeatureBanner, 
@@ -22,28 +22,28 @@ const Staff = () => {
 
   const departments = [
     {
-      name: "Technology",
-      icon: <Science sx={{ fontSize: 32 }} />,
+      name: "Administration",
+      icon: <Business sx={{ fontSize: 32 }} />,
       color: "primary.main",
-      count: staff.filter(member => member.department === "Technology").length,
+      count: staff.filter(member => member.department === "Administration").length,
     },
     {
       name: "Operations", 
-      icon: <Business sx={{ fontSize: 32 }} />,
+      icon: <WaterDrop sx={{ fontSize: 32 }} />,
       color: "secondary.main",
       count: staff.filter(member => member.department === "Operations").length,
     },
     {
-      name: "Research",
-      icon: <Engineering sx={{ fontSize: 32 }} />,
+      name: "Lab",
+      icon: <Science sx={{ fontSize: 32 }} />,
       color: "success.main", 
-      count: staff.filter(member => member.department === "Research").length,
+      count: staff.filter(member => member.department === "Lab").length,
     },
     {
-      name: "Compliance",
+      name: "Maintainence",
       icon: <Gavel sx={{ fontSize: 32 }} />,
       color: "warning.main",
-      count: staff.filter(member => member.department === "Compliance").length,
+      count: staff.filter(member => member.department === "Maintianence").length,
     },
   ];
 
@@ -105,12 +105,7 @@ const Staff = () => {
                 <Typography variant="h6" gutterBottom sx={{ fontWeight: 600 }}>
                   {dept.name}
                 </Typography>
-                <Chip 
-                  label={`${dept.count} Team Member${dept.count !== 1 ? 's' : ''}`}
-                  size="small"
-                  color="primary"
-                  variant="outlined"
-                />
+                
               </Card>
             </Grid>
           ))}
@@ -121,9 +116,9 @@ const Staff = () => {
       <Box sx={{ backgroundColor: 'background.default', py: 10 }}>
         <Container maxWidth="lg">
           <SectionHeader
-            title="Meet Our Team"
-            subtitle="The professionals driving our success"
-            description="Our diverse team of experts combines technical excellence with environmental stewardship to deliver innovative water management solutions."
+            title="Meet our Executive Team"
+            subtitle="Visionary leaders driving sustainable success in water management"
+            description="Our leadership team brings together technical expertise and a deep commitment to environmental responsibility. Together, they guide John P. Williams Plant toward innovation, operational excellence, and community impact."
           />
           
           <Grid container spacing={4}>
@@ -173,14 +168,13 @@ const Staff = () => {
               }}
             >
               <Typography variant="h3_white" gutterBottom sx={{ fontWeight: 700 }}>
-                25+
+              40+
               </Typography>
               <Typography variant="h6" gutterBottom>
                 Years Combined Experience
               </Typography>
               <Typography variant="body2" sx={{ opacity: 0.9 }}>
-                Our leadership team averages over 15 years of experience in environmental engineering, 
-                water treatment, and sustainable technology development.
+                Our team brings decades of practical experience in environmental engineering, water and wastewater treatment, sludge handling, and developing sustainable, real-world solutions for modern utilities.
               </Typography>
             </Card>
           </Grid>
@@ -202,7 +196,7 @@ const Staff = () => {
                 Current Openings
               </Typography>
               <Typography variant="h4" color="primary" sx={{ fontWeight: 700 }}>
-                4
+                1
               </Typography>
             </Card>
           </Box>

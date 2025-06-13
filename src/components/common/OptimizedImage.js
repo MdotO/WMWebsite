@@ -57,10 +57,22 @@ const OptimizedImage = ({
         sx={{
           width: '100%',
           height: '100%',
+          borderRadius: '50%',
           objectFit: 'cover',
-          opacity: isLoading ? 0 : 1,
-          transition: 'opacity 0.3s ease-in-out',
-        }}
+          border: '4px solid #1976d2',
+          boxShadow: 3,
+          animation: 'pulse 2s infinite',
+          '@keyframes pulse': {
+            '0%': { boxShadow: '0 0 0 0 rgba(25,118,210, 0.4)' },
+            '70%': { boxShadow: '0 0 0 15px rgba(25,118,210, 0)' },
+            '100%': { boxShadow: '0 0 0 0 rgba(25,118,210, 0)' },
+            }
+            }}
+          //width: width || 140,
+          //height: height || 140,
+          //opacity: isLoading ? 0 : 1,
+          //transition: 'opacity 0.3s ease-in-out',
+        //}}
         {...props}
       />
     </Box>

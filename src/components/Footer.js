@@ -66,7 +66,7 @@ const Footer = () => {
               {siteContent.company.tagline}
             </Typography>
             <Typography variant="body2" sx={{ mb: 3, lineHeight: 1.6, opacity: 0.8 }}>
-              Leading the industry in sustainable water waste management solutions since 2015.
+              Leading the industry in sustainable waste water treatment since 1970.
             </Typography>
             <Box sx={{ display: 'flex', gap: 1 }}>
               <IconButton 
