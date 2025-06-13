@@ -91,14 +91,36 @@ const Home = () => {
         <Container maxWidth="lg">
           <Grid container spacing={4} textAlign="center">
             <Grid item xs={12} md={3}>
+<<<<<<< HEAD
               <Typography variant="h2" sx={{ fontWeight: 700, mb: 1 }}>
                 30+
+=======
+              <Typography variant="h3_white" sx={{ fontWeight: 700, mb: 1 }}>
+                500+
+              </Typography>
+              <Typography variant="h6">
+                Projects Completed
+              </Typography>
+            </Grid>
+            <Grid item xs={12} md={3}>
+              <Typography variant="h3_white" sx={{ fontWeight: 700, mb: 1 }}>
+                50M+
+              </Typography>
+              <Typography variant="h6">
+                Gallons Treated Daily
+              </Typography>
+            </Grid>
+            <Grid item xs={12} md={3}>
+              <Typography variant="h3_white" sx={{ fontWeight: 700, mb: 1 }}>
+                15+
+>>>>>>> 0e5126814b685a0013c3529ccd7a2149dc738b2d
               </Typography>
               <Typography variant="h6">
                 Years of Excellence
               </Typography>
             </Grid>
             <Grid item xs={12} md={3}>
+<<<<<<< HEAD
               <Typography variant="h2" sx={{ fontWeight: 700, mb: 1 }}>
                 4M+
               </Typography>
@@ -108,6 +130,9 @@ const Home = () => {
             </Grid>
             <Grid item xs={12} md={3}>
               <Typography variant="h2" sx={{ fontWeight: 700, mb: 1 }}>
+=======
+              <Typography variant="h3_white" sx={{ fontWeight: 700, mb: 1 }}>
+>>>>>>> 0e5126814b685a0013c3529ccd7a2149dc738b2d
                 100%
               </Typography>
               <Typography variant="h6">

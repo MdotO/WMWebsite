@@ -1,6 +1,6 @@
 # John P. Williams Plant Website
 
-A professional corporate website for John P. Williams Plant Solutions, a water waste management company.
+A professional corporate website for John P. Williams Plant, a water waste management company.
 
 ## Project Overview
 
@@ -29,8 +29,8 @@ This is a React-based static website featuring:
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
-cd water-waste-management-website
+git clone https://github.com/MdotO/WMWebsite.git
+cd WMWebsite
 ```
 
 2. Install dependencies:
