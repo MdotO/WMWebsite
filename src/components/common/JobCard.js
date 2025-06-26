@@ -35,6 +35,11 @@ const JobCard = ({
         height: '100%',
         display: 'flex',
         flexDirection: 'column',
+        transition: 'transform 0.9s ease, box-shadow 0.9s ease',
+        '&:hover': {
+          transform: 'translateY(-5px)',
+          boxShadow: 6,
+        }
       }}
     >
       <CardContent sx={{ p: 3, flexGrow: 1 }}>

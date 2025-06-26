@@ -38,7 +38,7 @@ const Careers = () => {
   const { careers } = siteContent;
   const [selectedDepartment, setSelectedDepartment] = useState('All');
 
-  const departments = ['All', 'Engineering', 'Operations', 'Compliance', 'Research & Development'];
+  const departments = ['All', 'Engineering', 'Operations', 'Compliance', 'Laboratory Services'];
   
   const benefits = [
     {
@@ -54,12 +54,7 @@ const Careers = () => {
     {
       icon: <DirectionsCar color="primary" />,
       title: "Flexible Work",
-      description: "Remote work options and flexible scheduling"
-    },
-    {
-      icon: <Restaurant color="primary" />,
-      title: "Wellness Programs",
-      description: "On-site fitness center and healthy meal options"
+      description: "Supportive scheduling that fits your life — with shift options and a team that values work-life balance"
     },
     {
       icon: <TrendingUp color="primary" />,
@@ -294,7 +289,7 @@ const Careers = () => {
             <Typography variant="h5" gutterBottom sx={{ fontWeight: 600 }}>
               Don't See the Right Position?
             </Typography>
-            <Typography variant="body1" sx={{ mb: 3, opacity: 0.9 }}>
+            <Typography variant="body1" sx={{ mb: 3, opacity: 0.9, color: 'white' }}>
               We're always interested in connecting with talented professionals. 
               Send us your resume and we'll keep you in mind for future opportunities.
             </Typography>

@@ -17,6 +17,7 @@ import {
   Engineering,
   Science,
   Groups,
+  Biotech,
 } from '@mui/icons-material';
 import { siteContent } from '../data/siteContent';
 import { 
@@ -33,23 +34,23 @@ const AboutUs = () => {
   const values = [
     {
       icon: <Nature sx={{ fontSize: 40 }} />,
-      title: "Environmental Stewardship",
-      description: "We prioritize environmental protection in every solution we develop, ensuring sustainable practices for future generations."
+      title: "Sustainability in Action",
+      description: "We prioritize environmentally responsible practices — from phosphorus capture and ammonia reduction to solar-powered sludge treatment — ensuring long-term ecological balance."
     },
     {
-      icon: <Engineering sx={{ fontSize: 40 }} />,
-      title: "Innovation Excellence",
-      description: "Cutting-edge technology and innovative approaches drive our solutions to exceed industry standards."
+      icon: <Biotech sx={{ fontSize: 40 }} />,
+      title: "Biology-Led Innovation",
+      description: "Our work revolves around understanding the living ecosystem within our tanks. From nutrient-hungry microbes to sludge age control, biology shapes every decision we make."
     },
     {
       icon: <Science sx={{ fontSize: 40 }} />,
-      title: "Scientific Rigor",
-      description: "Evidence-based decision making and rigorous testing ensure the effectiveness of our solutions."
+      title: "Knowledge and Adaptability",
+      description: "We respond to data, trends, and microscopic cues — adjusting operations daily to match the plant’s biological and hydraulic behavior."
     },
     {
       icon: <Groups sx={{ fontSize: 40 }} />,
-      title: "Community Focus",
-      description: "We build lasting partnerships with communities to create solutions that benefit everyone."
+      title: "Community-Focused Integrity",
+      description: "With public service at the core, we maintain transparency, consistency, and accountability in every gallon treated — because we serve people, not just process water."
     },
   ];
 
@@ -58,7 +59,6 @@ const AboutUs = () => {
     "EPA Excellence in Environmental Stewardship Award",
     "Leading provider of municipal water treatment solutions",
     "Zero environmental violations in company history",
-    "50+ patents in water treatment technology",
     "Partnerships with top environmental research institutions"
   ];
 
@@ -67,7 +67,7 @@ const AboutUs = () => {
       {/* Hero Section */}
       <FeatureBanner
         title={aboutUs.title}
-        subtitle="Excellence in Water Management Since 2015"
+        subtitle="Excellence in Water Management Since 1970"
         description="Discover our commitment to innovation, sustainability, and environmental protection."
         backgroundImage={aboutUs.backgroundImage}
         primaryAction={{
