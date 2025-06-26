@@ -8,3 +8,4 @@ export { default as FeatureBanner } from './FeatureBanner';
 export { default as Logo } from './Logo';
 export { default as NavigationTest } from './NavigationTest';
 export { default as OptimizedImage } from './OptimizedImage'; 
+export { default as DepartmentHeadCard } from './DepartmentHeadCard'; 

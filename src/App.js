@@ -8,6 +8,9 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
 import Staff from './pages/Staff';
+import AdminTeam from './pages/AdminTeam';
+import ITTeam from './pages/ITTeam';
+import OperationsTeam from './pages/OperationsTeam';
 import Careers from './pages/Careers';
 import NotFound from './pages/NotFound';
 
@@ -36,6 +39,9 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<AboutUs />} />
               <Route path="/staff" element={<Staff />} />
+              <Route path="/staff/admin" element={<AdminTeam />} />
+              <Route path="/staff/it" element={<ITTeam />} />
+              <Route path="/staff/operations" element={<OperationsTeam />} />
               <Route path="/careers" element={<Careers />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
