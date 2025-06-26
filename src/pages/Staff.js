@@ -7,45 +7,51 @@ import {
   Card,
   CardContent,
   Chip,
+  Button,
 } from '@mui/material';
-import { Business, Science, Engineering, Gavel, WaterDrop } from '@mui/icons-material';
+import { Business, Computer, Engineering, ArrowForward } from '@mui/icons-material';
+import { useNavigate } from 'react-router-dom';
 import { siteContent } from '../data/siteContent';
 import { 
   FeatureBanner, 
-  SectionHeader, 
-  StaffCard 
+  SectionHeader
 } from '../components/common';
 import { imageAssets } from '../data/imageAssets';
 
 const Staff = () => {
-  const { staff } = siteContent;
+  const { departments } = siteContent;
+  const navigate = useNavigate();
 
-  const departments = [
+  const departmentData = [
     {
-      name: "Administration",
+      key: 'admin',
+      name: departments.admin.name,
+      description: departments.admin.description,
       icon: <Business sx={{ fontSize: 32 }} />,
       color: "primary.main",
-      count: staff.filter(member => member.department === "Administration").length,
+      count: departments.admin.staff.length,
     },
     {
-      name: "Operations", 
-      icon: <WaterDrop sx={{ fontSize: 32 }} />,
+      key: 'it',
+      name: departments.it.name,
+      description: departments.it.description,
+      icon: <Computer sx={{ fontSize: 32 }} />,
       color: "secondary.main",
-      count: staff.filter(member => member.department === "Operations").length,
+      count: departments.it.staff.length,
     },
     {
-      name: "Lab",
-      icon: <Science sx={{ fontSize: 32 }} />,
-      color: "success.main", 
-      count: staff.filter(member => member.department === "Lab").length,
-    },
-    {
-      name: "Maintainence",
-      icon: <Gavel sx={{ fontSize: 32 }} />,
-      color: "warning.main",
-      count: staff.filter(member => member.department === "Maintianence").length,
+      key: 'operations',
+      name: departments.operations.name,
+      description: departments.operations.description,
+      icon: <Engineering sx={{ fontSize: 32 }} />,
+      color: "success.main",
+      count: departments.operations.staff.length,
     },
   ];
+
+  const handleDepartmentClick = (departmentKey) => {
+    navigate(`/staff/${departmentKey}`);
+  };
 
   return (
     <Box>
@@ -66,77 +72,84 @@ const Staff = () => {
       />
 
       {/* Department Overview */}
-      <Container maxWidth="lg" sx={{ py: 8 }}>
+      <Container maxWidth="lg" sx={{ py: 10 }}>
         <SectionHeader
           title="Our Departments"
           subtitle="Specialized expertise across key areas"
+          description="Click on any department to meet the team members and learn about their roles and expertise."
         />
         
-        <Grid container spacing={3}>
-          {departments.map((dept, index) => (
-            <Grid item xs={12} sm={6} md={3} key={index}>
+        <Grid container spacing={4}>
+          {departmentData.map((dept, index) => (
+            <Grid item xs={12} md={4} key={index}>
               <Card 
                 sx={{ 
                   textAlign: 'center',
-                  p: 3,
+                  p: 4,
                   height: '100%',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s ease-in-out',
                   '&:hover': {
-                    transform: 'translateY(-4px)',
-                    boxShadow: '0 12px 24px rgba(0,0,0,0.15)',
+                    transform: 'translateY(-8px)',
+                    boxShadow: '0 16px 32px rgba(0,0,0,0.2)',
                   },
                 }}
+                onClick={() => handleDepartmentClick(dept.key)}
               >
                 <Box
                   sx={{
                     backgroundColor: dept.color,
                     borderRadius: '50%',
-                    width: 80,
-                    height: 80,
+                    width: 100,
+                    height: 100,
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     mx: 'auto',
-                    mb: 2,
+                    mb: 3,
                     color: 'white',
+                    transition: 'transform 0.3s ease-in-out',
+                    '&:hover': {
+                      transform: 'scale(1.1)',
+                    },
                   }}
                 >
                   {dept.icon}
                 </Box>
-                <Typography variant="h6" gutterBottom sx={{ fontWeight: 600 }}>
+                <Typography variant="h4" gutterBottom sx={{ fontWeight: 600 }}>
                   {dept.name}
                 </Typography>
-                
+                <Typography 
+                  variant="body1" 
+                  color="text.secondary" 
+                  sx={{ mb: 3, lineHeight: 1.6 }}
+                >
+                  {dept.description}
+                </Typography>
+                <Chip 
+                  label={`${dept.count} Team Member${dept.count !== 1 ? 's' : ''}`}
+                  size="medium"
+                  color="primary"
+                  variant="outlined"
+                  sx={{ mb: 2 }}
+                />
+                {/* <Button
+                  variant="contained"
+                  endIcon={<ArrowForward />}
+                  sx={{
+                    mt: 2,
+                    '&:hover': {
+                      transform: 'translateX(4px)',
+                    },
+                  }}
+                >
+                  Meet the Team
+                </Button> */}
               </Card>
             </Grid>
           ))}
         </Grid>
       </Container>
-
-      {/* Staff Grid Section */}
-      <Box sx={{ backgroundColor: 'background.default', py: 10 }}>
-        <Container maxWidth="lg">
-          <SectionHeader
-            title="Meet our Executive Team"
-            subtitle="Visionary leaders driving sustainable success in water management"
-            description="Our leadership team brings together technical expertise and a deep commitment to environmental responsibility. Together, they guide John P. Williams Plant toward innovation, operational excellence, and community impact."
-          />
-          
-          <Grid container spacing={4}>
-            {staff.map((member) => (
-              <Grid item xs={12} md={6} lg={6} key={member.id}>
-                <StaffCard
-                  name={member.name}
-                  title={member.title}
-                  image={member.image}
-                  message={member.message}
-                  email={member.email}
-                  department={member.department}
-                />
-              </Grid>
-            ))}
-          </Grid>
-        </Container>
-      </Box>
 
       {/* Leadership Philosophy Section */}
       <Container maxWidth="lg" sx={{ py: 10 }}>
