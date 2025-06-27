@@ -1,5 +1,5 @@
 # John P. Williams Plant Website
-
+![](/public/website/WM%20Website.png)
 A professional corporate website for John P. Williams Plant, a water waste management company.
 
 ## Project Overview
