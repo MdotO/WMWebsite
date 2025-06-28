@@ -57,12 +57,11 @@ const DepartmentHeadCard = ({
       </Box>
 
       {/* Content Section */}
-      <CardContent sx={{ p: 3, flexGrow: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+      <CardContent sx={{ p: 3, flexGrow: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
         {/* Name and Title */}
         <Typography variant="h3" gutterBottom sx={{ fontWeight: 600 }}>
           {name}
         </Typography>
-        
         <Typography 
           variant="h4" 
           color="primary" 
@@ -99,43 +98,41 @@ const DepartmentHeadCard = ({
         </Typography>
 
         {/* Contact Actions */}
-        <Box sx={{ display: 'flex', gap: 1 }}>
-          {email && (
-            <IconButton
-              href={`mailto:${email}`}
-              color="primary"
-              sx={{
-                backgroundColor: 'primary.light',
-                color: 'white',
-                '&:hover': {
-                  backgroundColor: 'primary.main',
-                  transform: 'scale(1.1)',
-                },
-              }}
-            >
-              <Email />
-            </IconButton>
-          )}
-          
-          {linkedIn && (
-            <IconButton
-              href={linkedIn}
-              target="_blank"
-              rel="noopener noreferrer"
-              color="primary"
-              sx={{
-                backgroundColor: 'secondary.light',
-                color: 'white',
-                '&:hover': {
-                  backgroundColor: 'secondary.main',
-                  transform: 'scale(1.1)',
-                },
-              }}
-            >
-              <LinkedIn />
-            </IconButton>
-          )}
-        </Box>
+        {email && (
+          <IconButton
+            href={`mailto:${email}`}
+            color="primary"
+            sx={{
+              backgroundColor: 'primary.light',
+              color: 'white',
+              '&:hover': {
+                backgroundColor: 'primary.main',
+                transform: 'scale(1.1)',
+              },
+            }}
+          >
+            <Email />
+          </IconButton>
+        )}
+        
+        {linkedIn && (
+          <IconButton
+            href={linkedIn}
+            target="_blank"
+            rel="noopener noreferrer"
+            color="primary"
+            sx={{
+              backgroundColor: 'secondary.light',
+              color: 'white',
+              '&:hover': {
+                backgroundColor: 'secondary.main',
+                transform: 'scale(1.1)',
+              },
+            }}
+          >
+            <LinkedIn />
+          </IconButton>
+        )}
       </CardContent>
     </Card>
   );
