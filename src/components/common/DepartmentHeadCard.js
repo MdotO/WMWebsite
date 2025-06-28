@@ -57,7 +57,7 @@ const DepartmentHeadCard = ({
       </Box>
 
       {/* Content Section */}
-      <CardContent sx={{ p: 3, flexGrow: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <CardContent sx={{ p: 3, flexGrow: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
         {/* Name and Title */}
         <Typography variant="h3" gutterBottom sx={{ fontWeight: 600 }}>
           {name}
