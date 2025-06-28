@@ -26,20 +26,26 @@ const DepartmentHeadCard = ({
       sx={{ 
         height: '100%',
         display: 'flex',
-        flexDirection: 'column',
+        flexDirection: 'row',
         position: 'relative',
         overflow: 'visible',
       }}
     >
-      <CardContent sx={{ p: 3, textAlign: 'center', flexGrow: 1 }}>
-        {/* Avatar */}
+      {/* Image Section */}
+      <Box
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'flex-start',
+        }}
+      >
         <Avatar
           src={image}
           sx={{
-            width: 200,
-            height: 200,
-            mx: 'auto',
-            mb: 2,
+            width: "auto",
+            height: '100%',
+            maxWidth: 300,
+            minWidth: 200,
             fontSize: '2rem',
             backgroundColor: 'primary.main',
             border: '4px solid white',
@@ -48,7 +54,10 @@ const DepartmentHeadCard = ({
         >
           {initials}
         </Avatar>
+      </Box>
 
+      {/* Content Section */}
+      <CardContent sx={{ p: 3, flexGrow: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
         {/* Name and Title */}
         <Typography variant="h3" gutterBottom sx={{ fontWeight: 600 }}>
           {name}
@@ -90,7 +99,7 @@ const DepartmentHeadCard = ({
         </Typography>
 
         {/* Contact Actions */}
-        <Box sx={{ display: 'flex', justifyContent: 'center', gap: 1 }}>
+        <Box sx={{ display: 'flex', gap: 1 }}>
           {email && (
             <IconButton
               href={`mailto:${email}`}
@@ -132,4 +141,4 @@ const DepartmentHeadCard = ({
   );
 };
 
-export default DepartmentHeadCard; 
+export default DepartmentHeadCard;
