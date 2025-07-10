@@ -28,7 +28,7 @@ const AdminTeam = () => {
       <FeatureBanner
         title={adminDept.name}
         subtitle="Strategic Leadership and Corporate Governance"
-        description="Meet our administration team that provides strategic leadership and ensures the highest standards of corporate governance."
+        description="Meet our administration team that provides operational leadership and ensures smooth coordination, compliance, and support across all departments at the plant."
         backgroundImage={imageAssets.backgrounds.office}
         primaryAction={{
           text: "Back to Departments",
@@ -93,13 +93,10 @@ const AdminTeam = () => {
             />
             <Typography variant="body1" sx={{ mb: 3, lineHeight: 1.7 }}>
               Our administration team provides the strategic foundation that enables John P. Williams Plant 
-              to achieve its mission of environmental excellence. We focus on sustainable growth, 
-              stakeholder value, and operational efficiency.
+              to achieve its mission of environmental excellence. We focus on sustainable growth, and operational efficiency.
             </Typography>
             <Typography variant="body1" sx={{ lineHeight: 1.7 }}>
-              From financial management to corporate governance, our administration professionals 
-              ensure that every decision aligns with our environmental values while driving 
-              business success and community impact.
+              From scheduling and procurement to compliance and coordination, our administration professionals ensure that every operation runs smoothly—supporting environmental goals, plant efficiency, and community service.
             </Typography>
           </Grid>
           <Grid item xs={12} md={6}>
@@ -113,9 +110,6 @@ const AdminTeam = () => {
                 </Typography>
                 <Typography component="li" sx={{ mb: 1, color: 'white' }}>
                   Financial management and resource allocation
-                </Typography>
-                <Typography component="li" sx={{ mb: 1, color: 'white' }}>
-                  Stakeholder relations and communications
                 </Typography>
                 <Typography component="li" sx={{ mb: 1, color: 'white' }}>
                   Compliance and regulatory oversight

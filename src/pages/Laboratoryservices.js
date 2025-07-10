@@ -87,41 +87,37 @@ const ITTeam = () => {
         <Grid container spacing={6} alignItems="center">
           <Grid item xs={12} md={6}>
             <SectionHeader
-              title="Technology Excellence"
-              subtitle="Innovation in Water Management"
+              title="Laboratory Excellence"
+              subtitle="Precision in Water Quality Analysis"
               align="left"
             />
             <Typography variant="body1" sx={{ mb: 3, lineHeight: 1.7 }}>
-              Our IT team is at the forefront of digital transformation in water management. 
-              We develop intelligent systems that provide real-time monitoring, predictive analytics, 
-              and automated control for water treatment processes.
+              Our Laboratory Services team ensures the integrity of every treatment process through rigorous testing, data validation, and compliance monitoring. From nutrient profiling to microbiological analysis, we provide the scientific backbone of our plant’s performance.
             </Typography>
             <Typography variant="body1" sx={{ lineHeight: 1.7 }}>
-              From software development to data science, our technology professionals create 
-              solutions that enhance efficiency, improve decision-making, and ensure the highest 
-              standards of water quality and environmental compliance.
+              Through continuous sampling, standardized protocols, and advanced instrumentation, our lab professionals deliver accurate, timely insights that guide operational decisions and safeguard public and environmental health.
             </Typography>
           </Grid>
           <Grid item xs={12} md={6}>
             <Box sx={{ p: 4, backgroundColor: 'secondary.main', color: 'white', borderRadius: 3 }}>
               <Typography variant="h3_white" gutterBottom sx={{ fontWeight: 600 }}>
-                Technology Focus Areas
+                Laboratory Focus Areas
               </Typography>
               <Box component="ul" sx={{ pl: 2 }}>
                 <Typography component="li" sx={{ mb: 1, color: 'white' }}>
-                  Real-time monitoring and control systems
+                  Real-time Water Quality Monitoring
                 </Typography>
                 <Typography component="li" sx={{ mb: 1, color: 'white' }}>
-                  Data analytics and predictive maintenance
+                  Data-Driven Process Optimization
                 </Typography>
                 <Typography component="li" sx={{ mb: 1, color: 'white' }}>
-                  IoT and sensor integration
+                  Advanced Instrumentation & Methods
                 </Typography>
                 <Typography component="li" sx={{ mb: 1, color: 'white' }}>
-                  Cloud infrastructure and security
+                  Sampling & Regulatory Compliance
                 </Typography>
                 <Typography component="li" sx={{ mb: 1, color: 'white' }}>
-                  Mobile applications and user interfaces
+                  Research & Method Development
                 </Typography>
               </Box>
             </Box>
