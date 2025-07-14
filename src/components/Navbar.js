@@ -41,12 +41,13 @@ const Navbar = () => {
     { label: 'Home', path: '/', exact: true },
     { label: 'About Us', path: '/about' },
     { label: 'Careers', path: '/careers' },
+    { label: 'Operations Flow', path: '/operations-flow' },
   ];
 
   const staffSubItems = [
     { label: 'Overview', path: '/staff', icon: <Business /> },
     { label: 'Admin Team', path: '/staff/admin', icon: <Business /> },
-    { label: 'IT Team', path: '/staff/it', icon: <Computer /> },
+    { label: 'Laboratory Team', path: '/staff/laboratory', icon: <Computer /> },
     { label: 'Operations Team', path: '/staff/operations', icon: <Engineering /> },
   ];
 
