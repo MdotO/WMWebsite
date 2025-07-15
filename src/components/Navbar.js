@@ -24,6 +24,7 @@ import {
   Computer,
   Engineering,
   ExpandMore,
+  Science,
 } from '@mui/icons-material';
 import { Link, useLocation } from 'react-router-dom';
 import { siteContent } from '../data/siteContent';
@@ -47,7 +48,7 @@ const Navbar = () => {
   const staffSubItems = [
     { label: 'Overview', path: '/staff', icon: <Business /> },
     { label: 'Admin Team', path: '/staff/admin', icon: <Business /> },
-    { label: 'Laboratory Team', path: '/staff/laboratory', icon: <Computer /> },
+    { label: 'Laboratory Team', path: '/staff/laboratory', icon: <Science /> },
     { label: 'Operations Team', path: '/staff/operations', icon: <Engineering /> },
   ];
 

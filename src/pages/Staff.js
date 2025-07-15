@@ -9,7 +9,7 @@ import {
   Chip,
   Button,
 } from '@mui/material';
-import { Business, Computer, Engineering, ArrowForward } from '@mui/icons-material';
+import { Business, Computer, Engineering, ArrowForward, Science } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import { siteContent } from '../data/siteContent';
 import { 
@@ -35,7 +35,7 @@ const Staff = () => {
       key: 'it',
       name: departments.it.name,
       description: departments.it.description,
-      icon: <Computer sx={{ fontSize: 32 }} />,
+      icon: <Science sx={{ fontSize: 32 }} />,
       color: "secondary.main",
       count: departments.it.staff.length,
     },

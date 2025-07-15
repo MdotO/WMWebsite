@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Box, Container, Typography, Card, CardContent, Avatar, IconButton, Stack } from '@mui/material';
+import { Box, Container, Typography, Card, Card2, CardContent, Avatar, IconButton, Stack } from '@mui/material';
 import { ArrowForwardIos, ArrowBackIos,  ArrowDownwardRounded, ArrowBack, ArrowForward } from '@mui/icons-material';
 import { FeatureBanner, SectionHeader } from '../components/common';
 import { imageAssets } from '../data/imageAssets';
@@ -27,17 +27,17 @@ const processSteps = [
   {
     id: '4',
     title: 'Secondary',
-    description: 'Further biological treatment and clarification.',
-    image: imageAssets.placeholders.card,
+    description: ' Biological treatment and clarification.',
+    image: imageAssets.placeholders.card2,
     sideProcesses: [
       {
-        title: 'Excess Water Holding',
-        description: 'Temporary storage for excess inflow.',
+        title: 'RAS',
+        description: 'Returns activated sludge to maintain biological treatment efficiency.',
         image: imageAssets.placeholders.card,
       },
       {
-        title: 'Sludge Wasting',
-        description: 'Thickens sludge before further processing.',
+        title: 'Sludge Wasting (WAS)',
+        description: 'Removes excess biomass to maintain system balance and performance.',
         image: imageAssets.placeholders.card,
       },
     ],
@@ -52,7 +52,7 @@ const processSteps = [
     id: '6',
     title: 'Final (UV) / Effluent',
     description: 'Disinfection (UV) and release of treated water.',
-    image: imageAssets.placeholders.card,
+    image: imageAssets.placeholders.card2,
   },
 ];
 

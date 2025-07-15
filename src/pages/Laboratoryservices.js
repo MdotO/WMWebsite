@@ -27,15 +27,15 @@ const ITTeam = () => {
       {/* Hero Section */}
       <FeatureBanner
         title={itDept.name}
-        subtitle="Digital Innovation and System Infrastructure"
-        description="Meet our IT team that drives digital transformation and technological innovation across all aspects of our water management solutions."
+        subtitle="Meet our Lab Team Head"
+        description="Our Laboratory Services team leads quality assurance and environmental monitoring through rigorous testing data analysis and compliance verification ensuring all treated water meets strict safety and performance standards."
         backgroundImage={imageAssets.backgrounds.laboratory}
         primaryAction={{
           text: "Back to Departments",
           onClick: () => navigate('/staff'),
         }}
         secondaryAction={{
-          text: "Contact IT Team",
+          text: "Contact our Lab Team",
           onClick: () => window.location.href = '/about#contact',
         }}
       />
@@ -44,7 +44,7 @@ const ITTeam = () => {
       <Container maxWidth="lg" sx={{ py: 8 }}>
         <SectionHeader
           title="Department Leadership"
-          subtitle="Meet our IT Team Head"
+          subtitle="Meet our Lab Supervisor"
         />
         
         <DepartmentHeadCard
@@ -60,9 +60,9 @@ const ITTeam = () => {
       <Box sx={{ backgroundColor: 'background.default', py: 10 }}>
         <Container maxWidth="lg">
           <SectionHeader
-            title="IT Team"
-            subtitle="Technology experts driving digital innovation"
-            description="Our IT team develops cutting-edge software solutions, manages data infrastructure, and creates intelligent systems that optimize water treatment processes."
+            title="Lab Team"
+            subtitle="Science professionals ensuring water quality through precision and analysis"
+            description="Our lab team performs rigorous testing analyzes key water parameters and delivers critical data to support safe sustainable and compliant water treatment operations."
           />
           
           <Grid container spacing={4}>
