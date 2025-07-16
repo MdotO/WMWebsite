@@ -36,8 +36,8 @@ const StaffCard = ({
         <Avatar
           src={image}
           sx={{
-            width: 100,
-            height: 100,
+            width: 10,
+            height: 10,
             mx: 'auto',
             mb: 2,
             fontSize: '2rem',

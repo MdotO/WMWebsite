@@ -57,7 +57,7 @@ const OptimizedImage = ({
         sx={{
           width: '100%',
           height: '100%',
-          borderRadius: '50%',
+          borderRadius: '4',
           objectFit: 'cover',
           border: '4px solid #1976d2',
           boxShadow: 3,

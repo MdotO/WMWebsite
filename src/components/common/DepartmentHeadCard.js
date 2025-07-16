@@ -42,10 +42,9 @@ const DepartmentHeadCard = ({
         <Avatar
           src={image}
           sx={{
-            width: "auto",
-            height: '100%',
-            maxWidth: 300,
-            minWidth: 200,
+            width: 150,           // fixed width
+            height: 250,          // fixed height
+            borderRadius: 2,      // ✅ makes it a rounded rectangle
             fontSize: '2rem',
             backgroundColor: 'primary.main',
             border: '4px solid white',

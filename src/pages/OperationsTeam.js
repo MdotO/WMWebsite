@@ -28,7 +28,7 @@ const OperationsTeam = () => {
       <FeatureBanner
         title={operationsDept.name}
         subtitle="Field Operations and Project Management"
-        description="Meet our operations team that manages field operations, project execution, and client relationships."
+        description="Meet our operations and Maintainence team that manages field operations, project execution, and client relationships."
         backgroundImage={imageAssets.backgrounds.waterPattern}
         primaryAction={{
           text: "Back to Departments",
@@ -44,7 +44,7 @@ const OperationsTeam = () => {
       <Container maxWidth="lg" sx={{ py: 8 }}>
         <SectionHeader
           title="Department Leadership"
-          subtitle="Meet our Operations Team Head"
+          subtitle="Meet our Operations and Maintainence Team Head"
         />
         
         <DepartmentHeadCard
@@ -60,9 +60,9 @@ const OperationsTeam = () => {
       <Box sx={{ backgroundColor: 'background.default', py: 10 }}>
         <Container maxWidth="lg">
           <SectionHeader
-            title="Operations Team"
+            title="Operations and Maintainence Team"
             subtitle="Field experts ensuring operational excellence"
-            description="Our operations team is responsible for executing projects on the ground, managing client relationships, and ensuring all field activities meet our high standards."
+            description="Our team is responsible for executing projects on the ground, managing all systems run smoothly, and ensuring all field activities meet our high standards."
           />
           
           <Grid container spacing={4}>

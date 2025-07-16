@@ -64,7 +64,7 @@ export const siteContent = {
         name: "Rebecca Gaines",
         title: "Lab Supervisor",
         image: imageAssets.staff.robert,
-        message: "Our IT team drives digital transformation and technological innovation across all aspects of our water management solutions. We leverage cutting-edge technologies to create intelligent, data-driven systems that optimize efficiency and provide real-time insights for better decision-making.",
+        message: "Our lab team ensures the integrity of water treatment through advanced analysis monitoring and verification processes delivering reliable data that supports operational excellence and regulatory compliance.",
         email: "r.thompson@portage-in.com"
       },
       staff: [
@@ -87,7 +87,7 @@ export const siteContent = {
       ]
     },
     operations: {
-      name: "Operations",
+      name: "Operations and Maintainence",
       description: "Field operations and project management",
       icon: "Engineering",
       head: {
@@ -108,16 +108,16 @@ export const siteContent = {
         },
         {
           id: 8,
-          name: "James Brown",
-          title: "Field Operations Manager",
+          name: "Steve Rebeck",
+          title: "Maintainence Lead",
           image: imageAssets.placeholders.avatar,
           message: "Overseeing on-site operations and ensuring safety compliance across all field activities.",
           email: "j.brown@portage-in.com"
         },
         {
           id: 9,
-          name: "Emily Davis",
-          title: "Quality Assurance Specialist",
+          name: "Garry Martin",
+          title: "Maintainence Technician",
           image: imageAssets.placeholders.avatar,
           message: "Maintaining the highest quality standards for all our water treatment processes.",
           email: "e.davis@portage-in.com"

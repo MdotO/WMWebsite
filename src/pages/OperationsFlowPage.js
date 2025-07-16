@@ -1,5 +1,5 @@
 
-import React, { useCallback, useEffect } from 'react';
+import React, { useCallback } from 'react';
 import ReactFlow, {
   useNodesState,
   useEdgesState,
@@ -66,15 +66,6 @@ const OperationsFlowPage = () => {
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
   const { setCenter } = useReactFlow();
-  // TODO: VERY TEMPORARY FIX FOR THE CENTERING OF THE GRAPH
-  useEffect(() => {
-    const topNode = initialNodes.find((node) => node.id === '1');
-    if (topNode) {
-      const nodeWidth = 320;
-      const nodeHeight = 340;
-      setCenter(topNode.position.x + nodeWidth / 2, topNode.position.y + nodeHeight, { zoom: 1, duration: 100 });
-    }
-  }, [setCenter]);
 
   const onConnect = useCallback((params) => setEdges((eds) => addEdge(params, eds)), [setEdges]);
 
@@ -120,6 +111,8 @@ const OperationsFlowPage = () => {
         onNodeClick={onNodeClick}
         nodeTypes={nodeTypes}
         edgeTypes={edgeTypes}
+        fitView
+        fitViewOptions={{ padding: 0.1 }}
         minZoom={0.7}
         maxZoom={1.5}
         translateExtent={[[-200, -200], [1300, 1800]]}
