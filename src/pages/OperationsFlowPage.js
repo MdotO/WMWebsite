@@ -1,250 +1,161 @@
 
-import React, { useState } from 'react';
-import { Box, Container, Typography, Card, CardContent, Avatar, IconButton, Stack } from '@mui/material';
-import { ArrowForwardIos, ArrowBackIos,  ArrowDownwardRounded, ArrowBack, ArrowForward } from '@mui/icons-material';
-import { FeatureBanner, SectionHeader } from '../components/common';
+import React, { useCallback, useEffect } from 'react';
+import ReactFlow, {
+  useNodesState,
+  useEdgesState,
+  addEdge,
+  Controls,
+  Background,
+  useReactFlow,
+  MarkerType,
+  ReactFlowProvider,
+} from 'reactflow';
+import 'reactflow/dist/style.css';
+import { Box, Typography, Paper } from '@mui/material';
+
+import CustomFlowNode from '../components/common/CustomFlowNode';
+import CustomFlowEdge from '../components/common/CustomFlowEdge';
 import { imageAssets } from '../data/imageAssets';
 
-const processSteps = [
-  {
-    id: '1',
-    title: 'Influent',
-    description: 'Raw wastewater entering the plant for treatment.',
-    image: imageAssets.placeholders.card,
-  },
-  {
-    id: '2',
-    title: 'Preliminary Treatment',
-    description: 'Removes large debris and grit from the influent.',
-    image: imageAssets.placeholders.card,
-  },
-  {
-    id: '3',
-    title: 'Primary',
-    description: 'Settling tanks allow solids to settle and oils to float.',
-    image: imageAssets.placeholders.card,
-  },
-  {
-    id: '4',
-    title: 'Secondary',
-    description: 'Further biological treatment and clarification.',
-    image: imageAssets.placeholders.card,
-    sideProcesses: [
-      {
-        title: 'Excess Water Holding',
-        description: 'Temporary storage for excess inflow.',
-        image: imageAssets.placeholders.card,
-      },
-      {
-        title: 'Sludge Wasting',
-        description: 'Thickens sludge before further processing.',
-        image: imageAssets.placeholders.card,
-      },
-    ],
-  },
-  {
-    id: '5',
-    title: 'Tertiary',
-    description: 'Advanced treatment for nutrient removal and polishing.',
-    image: imageAssets.placeholders.card,
-  },
-  {
-    id: '6',
-    title: 'Final (UV) / Effluent',
-    description: 'Disinfection (UV) and release of treated water.',
-    image: imageAssets.placeholders.card,
-  },
-];
+const initialNodes = [
+  { id: '1', position: { x: 400, y: 0 }, data: { label: 'Raw Influent', description: 'Wastewater enters the plant.', image: imageAssets.placeholders.card }, type: 'custom' },
+  { id: '2', position: { x: 400, y: 200 }, data: { label: 'Preliminary', description: 'Removal of large debris.', image: imageAssets.placeholders.card }, type: 'custom' },
+  { id: '3', position: { x: 400, y: 400 }, data: { label: 'Primary', description: 'Settling of solids.', image: imageAssets.placeholders.card }, type: 'custom' },
+  { id: '4', position: { x: 400, y: 600 }, data: { label: 'Oxidation Ditch', description: 'Biological treatment.', image: imageAssets.placeholders.card }, type: 'custom' },
+  { id: '5', position: { x: 0, y: 725 }, data: { label: 'Secondary', description: 'Further clarification.', image: imageAssets.placeholders.card }, type: 'custom' },
+  { id: '6', position: { x: 400, y: 800 }, data: { label: 'Secondary Clarifiers', description: 'Separates activated sludge.', image: imageAssets.placeholders.card }, type: 'custom' },
+  { id: '7', position: { x: 850, y: 600 }, data: { label: 'RAS/WAS Station', description: 'Return/Waste Activated Sludge.', image: imageAssets.placeholders.card }, type: 'custom' },
+  { id: '8', position: { x: 400, y: 1000 }, data: { label: 'Tertiary', description: 'Advanced nutrient removal.', image: imageAssets.placeholders.card }, type: 'custom' },
+  { id: '9', position: { x: 400, y: 1200 }, data: { label: 'Final (UV)', description: 'Disinfection with UV light.', image: imageAssets.placeholders.card }, type: 'custom' },
+  { id: '10', position: { x: 400, y: 1400 }, data: { label: 'Final Effluent', description: 'Treated water is discharged.', image: imageAssets.placeholders.card }, type: 'custom' },
+  { id: '11', position: { x: 1000, y: 800 }, data: { label: 'Gravity Belt Thickener', description: 'Thickens sludge.', image: imageAssets.placeholders.card }, type: 'custom' },
+  { id: '12', position: { x: 850, y: 1000 }, data: { label: 'Digestor', description: 'Sludge stabilization.', image: imageAssets.placeholders.card }, type: 'custom' },
+  { id: '13', position: { x: 850, y: 1200 }, data: { label: 'Belt Press', description: 'Dewatering of sludge.', image: imageAssets.placeholders.card }, type: 'custom' },
+  { id: '14', position: { x: 850, y: 1400 }, data: { label: 'Land Application', description: 'Biosolids processing.', image: imageAssets.placeholders.card }, type: 'custom' },
+].map(node => ({ ...node, sourcePosition: 'bottom', targetPosition: 'top' }));
 
-// Replace ArrowSVG with a styled ArrowDownward icon
-const ArrowSVG = () => (
-  <Box sx={{ display: 'flex', justifyContent: 'center', my: 0 }}>
-    <Box sx={{ backgroundColor: 'white', borderRadius: '50%', p: 1 }}>
-      <ArrowDownwardRounded sx={{ fontSize: 80, color: 'primary.main', strokeWidth: 2, stroke: '#1976d2', filter: 'drop-shadow(0 2px 6px #1976d2aa)' }} />
-    </Box>
-  </Box>
-);
+const initialEdges = [
+    { id: 'e1-2', source: '1', target: '2', type: 'custom', animated: true, sourceHandle: 'bottom-source', targetHandle: 'top-target' },
+    { id: 'e2-3', source: '2', target: '3', type: 'custom', animated: true, sourceHandle: 'bottom-source', targetHandle: 'top-target' },
+    { id: 'e3-4', source: '3', target: '4', type: 'custom', animated: true, sourceHandle: 'bottom-source', targetHandle: 'top-target' },
+    { id: 'e4-5', source: '4', target: '5', type: 'custom', animated: true, sourceHandle: 'left-source', targetHandle: 'right-target' },
+    { id: 'e4-6', source: '4', target: '6', type: 'custom', animated: true, sourceHandle: 'bottom-source', targetHandle: 'top-target' },
+    { id: 'e6-5', source: '6', target: '5', type: 'custom', animated: true, sourceHandle: 'left-source', targetHandle: 'right-target' },
+    { id: 'e6-7', source: '6', target: '7', type: 'custom', animated: true, sourceHandle: 'right-source', targetHandle: 'bottom-target' },
+    { id: 'e6-8', source: '6', target: '8', type: 'custom', animated: true, sourceHandle: 'bottom-source', targetHandle: 'top-target' },
+    { id: 'e7-4', source: '7', target: '4', type: 'custom', animated: true, sourceHandle: 'left-source', targetHandle: 'right-target' },
+    { id: 'e7-11', source: '7', target: '11', type: 'custom', animated: true, sourceHandle: 'bottom-source', targetHandle: 'top-target' },
+    { id: 'e8-9', source: '8', target: '9', type: 'custom', animated: true, sourceHandle: 'bottom-source', targetHandle: 'top-target' },
+    { id: 'e9-10', source: '9', target: '10', type: 'custom', animated: true, sourceHandle: 'bottom-source', targetHandle: 'top-target' },
+    { id: 'e11-12', source: '11', target: '12', type: 'custom', animated: true, sourceHandle: 'bottom-source', targetHandle: 'top-target' },
+    { id: 'e12-13', source: '12', target: '13', type: 'custom', animated: true, sourceHandle: 'bottom-source', targetHandle: 'top-target' },
+    { id: 'e13-14', source: '13', target: '14', type: 'custom', animated: true, sourceHandle: 'bottom-source', targetHandle: 'top-target' },
+].map(edge => ({ ...edge, markerEnd: { type: MarkerType.ArrowClosed, color: '#1976d2' } }));
 
-const StepCard = ({ step, isSide, onPrevSide, onNextSide, sideIndex, totalSides }) => (
-  <Card
-    sx={{
-      minWidth: 300,
-      maxWidth: 1000,
-      mx: 'auto',
-      my: 4,
-      borderRadius: 3,
-      boxShadow: 6,
-      background: 'white', // Always white background
-      border: '2px solid #90caf9', // Always blue border
-      display: 'flex',
-      flexDirection: { xs: 'column', md: 'row' },
-      alignItems: 'stretch',
-      overflow: 'hidden',
-      position: 'relative',
-    }}
-  >
-    {/* Image on the left */}
-    <Box
-      sx={{
-        flex: { xs: '0 0 auto', md: '0 0 40%' },
-        width: { xs: '100%', md: '40%' },
-        minHeight: 220,
-        background: 'linear-gradient(135deg, #1976d2 60%, #42a5f5 100%)',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        p: 2,
-      }}
-    >
-      <Box
-        component="img"
-        src={step.image}
-        alt={step.title}
-        sx={{
-          width: '100%',
-          height: '100%',
-          objectFit: 'cover'
-        }}
-      />
-    </Box>
-    {/* Content on the right */}
-    <Box
-      sx={{
-        flex: 1,
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        p: { xs: 3, md: 5 },
-        textAlign: 'center',
-        position: 'relative',
-      }}
-    >
-      {/* Subprocess arrows (left/right) */}
-      {typeof sideIndex === 'number' && totalSides > 1 && (
-        <>
-          <IconButton
-            onClick={onPrevSide}
-            disabled={sideIndex === 0}
-            color="primary"
-            sx={{
-              position: 'absolute',
-              left: 20,
-              top: '50%',
-              transform: 'translateY(-50%)',
-              zIndex: 2,
-              background: 'transparent', // Remove blue background
-              boxShadow: 2,
-              '&:hover': { background: '#bbdefb' },
-              display: { xs: 'none', md: 'flex' },
-            }}
-          >
-            <ArrowBack />
-          </IconButton>
-          <IconButton
-            onClick={onNextSide}
-            disabled={sideIndex === totalSides - 1}
-            color="primary"
-            sx={{
-              position: 'absolute',
-              right: 20,
-              top: '50%',
-              transform: 'translateY(-50%)',
-              zIndex: 2,
-              background: 'transparent', // Remove blue background
-              boxShadow: 2,
-              '&:hover': { background: '#bbdefb' },
-              display: { xs: 'none', md: 'flex' },
-            }}
-          >
-            <ArrowForward />
-          </IconButton>
-        </>
-      )}
-      <Typography variant="h4" sx={{ fontWeight: 700, color: '#1976d2', mb: 2 }}>
-        {step.title}
-      </Typography>
-      <Typography variant="body1" sx={{ color: '#546e7a', fontSize: 18, maxWidth: 500 }}>
-        {step.description}
-      </Typography>
-      {/* Subprocess arrows for mobile (below content) */}
-      {typeof sideIndex === 'number' && totalSides > 1 && (
-        <Box sx={{ display: { xs: 'flex', md: 'none' }, justifyContent: 'center', gap: 2, mt: 2 }}>
-          <IconButton onClick={onPrevSide} disabled={sideIndex === 0} color="primary" sx={{ background: 'transparent' }}>
-            <ArrowBack />
-          </IconButton>
-          <Typography variant="caption" sx={{ color: '#1976d2' }}>{`${sideIndex + 1} / ${totalSides}`}</Typography>
-          <IconButton onClick={onNextSide} disabled={sideIndex === totalSides - 1} color="primary" sx={{ background: 'transparent' }}>
-            <ArrowForward />
-          </IconButton>
-        </Box>
-      )}
-    </Box>
-  </Card>
+const nodeTypes = {
+  custom: CustomFlowNode,
+};
+
+const FlowProvider = ({ children }) => (
+  <ReactFlowProvider>
+    {children}
+  </ReactFlowProvider>
 );
 
 const OperationsFlowPage = () => {
-  const [sideProcessIndex, setSideProcessIndex] = useState({});
+  const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
+  const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
+  const { setCenter } = useReactFlow();
+  // TODO: VERY TEMPORARY FIX FOR THE CENTERING OF THE GRAPH
+  useEffect(() => {
+    const topNode = initialNodes.find((node) => node.id === '1');
+    if (topNode) {
+      const nodeWidth = 320;
+      const nodeHeight = 340;
+      setCenter(topNode.position.x + nodeWidth / 2, topNode.position.y + nodeHeight, { zoom: 1, duration: 100 });
+    }
+  }, [setCenter]);
 
-  const handlePrevSide = (stepId) => {
-    setSideProcessIndex((prev) => ({
-      ...prev,
-      [stepId]: Math.max(0, (prev[stepId] || 0) - 1),
-    }));
+  const onConnect = useCallback((params) => setEdges((eds) => addEdge(params, eds)), [setEdges]);
+
+  const onEdgeClick = (edgeId) => {
+    const edge = edges.find(e => e.id === edgeId);
+    if (!edge) return;
+
+    const targetNode = nodes.find(node => node.id === edge.target);
+    if (targetNode) {
+      const x = targetNode.position.x + (targetNode.width / 2);
+      const y = targetNode.position.y + (targetNode.height / 2);
+      setCenter(x, y, { zoom: 1, duration: 800 });
+    }
   };
-  const handleNextSide = (stepId, total) => {
-    setSideProcessIndex((prev) => ({
-      ...prev,
-      [stepId]: Math.min(total - 1, (prev[stepId] || 0) + 1),
-    }));
+
+  const onNodeClick = useCallback(
+    (event, node) => {
+      setCenter(node.position.x + node.width / 2, node.position.y + node.height / 2, {
+        zoom: 1.2,
+        duration: 500,
+      });
+    },
+    [setCenter]
+  );
+  
+  const edgeTypes = {
+    custom: CustomFlowEdge
   };
+
+  const edgesWithData = edges.map(edge => ({
+    ...edge,
+    data: { ...edge.data, onClick: onEdgeClick },
+  }));
 
   return (
-    <Box sx={{ minHeight: '100vh', background: `url(${imageAssets.backgrounds.waterPattern}) center/cover no-repeat` }}>
-      <FeatureBanner
-        title="Operations Flow"
-        subtitle="Step-by-step Process of John P. Williams Plant"
-        description="Scroll down to follow the main process. For steps with side processes, use the arrows to view additional subprocesses."
-        backgroundImage={imageAssets.backgrounds.waterPattern}
-      />
-      <Container maxWidth="lg" sx={{ py: 6 }}>
-        <SectionHeader
-          title="Plant Operations Flow"
-          subtitle="Scroll to follow the process"
-        />
-        <Stack spacing={0} alignItems="center">
-          {processSteps.map((step, idx) => {
-            const hasSide = Array.isArray(step.sideProcesses) && step.sideProcesses.length > 0;
-            const sideIdx = sideProcessIndex[step.id] || 0;
-            return (
-              <Box key={step.id} sx={{ width: '100%', position: 'relative' }}>
-                {hasSide && sideIdx > 0 ? (
-                  <StepCard
-                    step={step.sideProcesses[sideIdx - 1]}
-                    isSide
-                    onPrevSide={() => handlePrevSide(step.id)}
-                    onNextSide={() => handleNextSide(step.id, step.sideProcesses.length + 1)}
-                    sideIndex={sideIdx}
-                    totalSides={step.sideProcesses.length + 1}
-                  />
-                ) : (
-                  <StepCard
-                    step={step}
-                    isSide={false}
-                    onPrevSide={() => handlePrevSide(step.id)}
-                    onNextSide={() => handleNextSide(step.id, step.sideProcesses ? step.sideProcesses.length + 1 : 1)}
-                    sideIndex={hasSide ? sideIdx : undefined}
-                    totalSides={hasSide ? step.sideProcesses.length + 1 : 1}
-                  />
-                )}
-                {idx < processSteps.length - 1 && <ArrowSVG />}
-              </Box>
-            );
-          })}
-        </Stack>
-      </Container>
+    <Box sx={{ height: '90vh', width: '100%', position: 'relative' }}>
+      <ReactFlow
+        nodes={nodes}
+        edges={edgesWithData}
+        onNodesChange={onNodesChange}
+        onEdgesChange={onEdgesChange}
+        onConnect={onConnect}
+        onNodeClick={onNodeClick}
+        nodeTypes={nodeTypes}
+        edgeTypes={edgeTypes}
+        minZoom={0.7}
+        maxZoom={1.5}
+        translateExtent={[[-200, -200], [1300, 1800]]}
+        attributionPosition="bottom-left"
+        proOptions={{ hideAttribution: true }}
+      >
+        <Controls />
+        <Background color="#aaa" gap={16} />
+      </ReactFlow>
+      <Paper
+        elevation={4}
+        sx={{
+          position: 'absolute',
+          top: 20,
+          left: 20,
+          p: 2,
+          borderRadius: 2,
+          backgroundColor: 'rgba(255, 255, 255, 0.9)',
+          maxWidth: 350,
+        }}
+      >
+        <Typography variant="h5" sx={{ fontWeight: 'bold', color: 'primary.main', mb: 1 }}>
+          Operations Flow
+        </Typography>
+        <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+          Explore the plant's treatment process. Click the arrows to navigate between steps, and use your mouse to pan and zoom.
+        </Typography>
+      </Paper>
     </Box>
   );
 };
 
-export default OperationsFlowPage; 
+const OperationsFlowPageWrapper = () => (
+  <FlowProvider>
+    <OperationsFlowPage />
+  </FlowProvider>
+);
+
+export default OperationsFlowPageWrapper; 
