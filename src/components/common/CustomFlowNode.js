@@ -2,7 +2,7 @@ import React from 'react';
 import { Handle, Position } from 'reactflow';
 import { Card, Box, Typography, Avatar } from '@mui/material';
 
-const handleStyle = { background: '#555', width: 8, height: 8, zIndex: 10 };
+const handleStyle = { width: 8, height: 8, zIndex: 10, background: 'transparent', border: 'none' };
 
 const CustomFlowNode = ({ data, selected }) => (
   <Card
@@ -43,18 +43,19 @@ const CustomFlowNode = ({ data, selected }) => (
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
           backgroundColor: '#fff',
-          border: '2px solid #42a5f5',
-          borderRadius: '4px',
+
         }}
       />
     </Box>
-    <Box sx={{ p: 2, flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-      <Typography variant="h6" sx={{ fontWeight: 700, color: '#1976d2', mb: 0.5 }}>
+    <Box sx={{ p: 2, flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', overflow: 'hidden' }}>
+      <Typography variant="h6" sx={{ fontWeight: 700, color: '#1976d2', mb: 0.5, flexShrink: 0 }}>
         {data.label}
       </Typography>
-      <Typography variant="body2" sx={{ color: '#546e7a', fontSize: '0.875rem' }}>
-        {data.description}
-      </Typography>
+      <Box sx={{ overflowY: 'auto', flexGrow: 1, '&::-webkit-scrollbar': { width: '4px' }, '&::-webkit-scrollbar-thumb': { background: '#ccc', borderRadius: '2px' } }}>
+          <Typography variant="body2" sx={{ color: '#546e7a', fontSize: '0.875rem' }}>
+            {data.description}
+          </Typography>
+      </Box>
     </Box>
     <Handle type="target" position={Position.Top} id="top-target" style={{ ...handleStyle, left: '35%' }} />
     <Handle type="source" position={Position.Top} id="top-source" style={{ ...handleStyle, left: '65%' }} />
