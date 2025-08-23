@@ -1,5 +1,5 @@
 
-import React, { useCallback } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import ReactFlow, {
   useNodesState,
   useEdgesState,
@@ -11,25 +11,32 @@ import ReactFlow, {
   ReactFlowProvider,
 } from 'reactflow';
 import 'reactflow/dist/style.css';
-import { Box, Typography, Paper } from '@mui/material';
+import { Box, Typography, Paper, Button } from '@mui/material';
 
 import CustomFlowNode from '../components/common/CustomFlowNode';
 import CustomFlowEdge from '../components/common/CustomFlowEdge';
 import { imageAssets } from '../data/imageAssets';
+import PrimaryClarifier from '../assets/images/operationsflow/Primary_Clarifier.jpg';
+import SecondaryClarifier from '../assets/images/operationsflow/Secondary_Clarifier.jpg';
+import SecondaryClarifier2 from '../assets/images/operationsflow/Secondary_Clarifier_2.jpg';
+import TertiaryAndUVTreatment from '../assets/images/operationsflow/Tertiary_and_UV_treatment.jpg';
+import TertiaryAndUVTreatment2 from '../assets/images/operationsflow/Tertiary_and_UV_treatment_2.jpg';
+import Digestor from '../assets/images/operationsflow/Digestor.jpg';
+import OxidationDitch from '../assets/images/operationsflow/Oxidation_ditch.jpg';
 
 const initialNodes = [
   { id: '1', position: { x: 400, y: 0 }, data: { label: 'Raw Influent', description: 'Wastewater enters the plant.', image: imageAssets.placeholders.card }, type: 'custom' },
   { id: '2', position: { x: 400, y: 200 }, data: { label: 'Preliminary', description: 'Removal of large debris.', image: imageAssets.placeholders.card }, type: 'custom' },
-  { id: '3', position: { x: 400, y: 400 }, data: { label: 'Primary', description: 'Settling of solids.', image: imageAssets.placeholders.card }, type: 'custom' },
-  { id: '4', position: { x: 400, y: 600 }, data: { label: 'Oxidation Ditch', description: 'Biological treatment.', image: imageAssets.placeholders.card }, type: 'custom' },
-  { id: '5', position: { x: 0, y: 725 }, data: { label: 'Secondary', description: 'Further clarification.', image: imageAssets.placeholders.card }, type: 'custom' },
-  { id: '6', position: { x: 400, y: 800 }, data: { label: 'Secondary Clarifiers', description: 'Separates activated sludge.', image: imageAssets.placeholders.card }, type: 'custom' },
+  { id: '3', position: { x: 400, y: 400 }, data: { label: 'Primary', description: 'Settling of solids.', image:PrimaryClarifier  }, type: 'custom' },
+  { id: '4', position: { x: 400, y: 600 }, data: { label: 'Oxidation Ditch', description: 'Biological treatment.', image: OxidationDitch }, type: 'custom' },
+  { id: '5', position: { x: 0, y: 725 }, data: { label: 'Secondary', description: 'Further clarification.', image: SecondaryClarifier }, type: 'custom' },
+  { id: '6', position: { x: 400, y: 800 }, data: { label: 'Secondary Clarifiers', description: 'Separates activated sludge.', image: SecondaryClarifier2}, type: 'custom' },
   { id: '7', position: { x: 850, y: 600 }, data: { label: 'RAS/WAS Station', description: 'Return/Waste Activated Sludge.', image: imageAssets.placeholders.card }, type: 'custom' },
-  { id: '8', position: { x: 400, y: 1000 }, data: { label: 'Tertiary', description: 'Advanced nutrient removal.', image: imageAssets.placeholders.card }, type: 'custom' },
-  { id: '9', position: { x: 400, y: 1200 }, data: { label: 'Final (UV)', description: 'Disinfection with UV light.', image: imageAssets.placeholders.card }, type: 'custom' },
+  { id: '8', position: { x: 400, y: 1000 }, data: { label: 'Tertiary', description: 'Advanced nutrient removal.', image: TertiaryAndUVTreatment }, type: 'custom' },
+  { id: '9', position: { x: 400, y: 1200 }, data: { label: 'Final (UV)', description: 'Disinfection with UV light.', image: TertiaryAndUVTreatment2 }, type: 'custom' },
   { id: '10', position: { x: 400, y: 1400 }, data: { label: 'Final Effluent', description: 'Treated water is discharged.', image: imageAssets.placeholders.card }, type: 'custom' },
   { id: '11', position: { x: 1000, y: 800 }, data: { label: 'Gravity Belt Thickener', description: 'Thickens sludge.', image: imageAssets.placeholders.card }, type: 'custom' },
-  { id: '12', position: { x: 850, y: 1000 }, data: { label: 'Digestor', description: 'Sludge stabilization.', image: imageAssets.placeholders.card }, type: 'custom' },
+  { id: '12', position: { x: 850, y: 1000 }, data: { label: 'Digestor', description: 'Sludge stabilization.', image: Digestor}, type: 'custom' },
   { id: '13', position: { x: 850, y: 1200 }, data: { label: 'Belt Press', description: 'Dewatering of sludge.', image: imageAssets.placeholders.card }, type: 'custom' },
   { id: '14', position: { x: 850, y: 1400 }, data: { label: 'Land Application', description: 'Biosolids processing.', image: imageAssets.placeholders.card }, type: 'custom' },
 ].map(node => ({ ...node, sourcePosition: 'bottom', targetPosition: 'top' }));
@@ -56,6 +63,8 @@ const nodeTypes = {
   custom: CustomFlowNode,
 };
 
+const showDevTools = true;
+
 const FlowProvider = ({ children }) => (
   <ReactFlowProvider>
     {children}
@@ -66,6 +75,15 @@ const OperationsFlowPage = () => {
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
   const { setCenter } = useReactFlow();
+
+  // useEffect(() => {
+  //   const topNode = initialNodes.find((node) => node.id === '1');
+  //   if (topNode) {
+  //     const nodeWidth = 320;
+  //     const nodeHeight = 140;
+  //     setCenter(topNode.position.x + nodeWidth / 2, topNode.position.y + nodeHeight / 2, { zoom: 1, duration: 0 });
+  //   }
+  // }, [setCenter]);
 
   const onConnect = useCallback((params) => setEdges((eds) => addEdge(params, eds)), [setEdges]);
 
@@ -91,6 +109,15 @@ const OperationsFlowPage = () => {
     [setCenter]
   );
   
+  const onSavePositions = () => {
+    const nodePositions = nodes.map(({ id, position }) => ({
+      id,
+      position: { x: Math.round(position.x), y: Math.round(position.y) },
+    }));
+    console.log('const updatedNodePositions = ' + JSON.stringify(nodePositions, null, 2) + ';');
+    alert('Node positions have been logged to the console.');
+  };
+
   const edgeTypes = {
     custom: CustomFlowEdge
   };
@@ -111,7 +138,8 @@ const OperationsFlowPage = () => {
         onNodeClick={onNodeClick}
         nodeTypes={nodeTypes}
         edgeTypes={edgeTypes}
-        fitView
+        nodesDraggable={showDevTools}
+        zoom={1}
         fitViewOptions={{ padding: 0.1 }}
         minZoom={0.7}
         maxZoom={1.5}
@@ -141,6 +169,20 @@ const OperationsFlowPage = () => {
           Explore the plant's treatment process. Click the arrows to navigate between steps, and use your mouse to pan and zoom.
         </Typography>
       </Paper>
+      {showDevTools && (
+        <Button
+          variant="contained"
+          onClick={onSavePositions}
+          sx={{
+            position: 'absolute',
+            bottom: 30,
+            right: 20,
+            zIndex: 10,
+          }}
+        >
+          Log Node Positions
+        </Button>
+      )}
     </Box>
   );
 };
