@@ -32,12 +32,12 @@ const Staff = () => {
       count: departments.admin.staff.length,
     },
     {
-      key: 'it',
-      name: departments.it.name,
-      description: departments.it.description,
+      key: 'laboratory',
+      name: departments.laboratory.name,
+      description: departments.laboratory.description,
       icon: <Science sx={{ fontSize: 32 }} />,
       color: "secondary.main",
-      count: departments.it.staff.length,
+      count: departments.laboratory.staff.length,
     },
     {
       key: 'operations',
