@@ -17,16 +17,16 @@ import {
 } from '../components/common';
 import { imageAssets } from '../data/imageAssets';
 
-const ITTeam = () => {
+const LaboratoryTeam = () => {
   const { departments } = siteContent;
   const navigate = useNavigate();
-  const itDept = departments.it;
+  const laboratoryDept = departments.laboratory;
 
   return (
     <Box>
       {/* Hero Section */}
       <FeatureBanner
-        title={itDept.name}
+        title={laboratoryDept.name}
         subtitle="Meet our Lab Team Head"
         description="Our Laboratory Services team leads quality assurance and environmental monitoring through rigorous testing data analysis and compliance verification ensuring all treated water meets strict safety and performance standards."
         backgroundImage={imageAssets.backgrounds.laboratory}
@@ -48,11 +48,11 @@ const ITTeam = () => {
         />
         
         <DepartmentHeadCard
-          name={itDept.head.name}
-          title={itDept.head.title}
-          image={itDept.head.image}
-          message={itDept.head.message}
-          email={itDept.head.email}
+          name={laboratoryDept.head.name}
+          title={laboratoryDept.head.title}
+          image={laboratoryDept.head.image}
+          message={laboratoryDept.head.message}
+          email={laboratoryDept.head.email}
         />
       </Container>
 
@@ -66,7 +66,7 @@ const ITTeam = () => {
           />
           
           <Grid container spacing={4}>
-            {itDept.staff.map((member) => (
+            {laboratoryDept.staff.map((member) => (
               <Grid item xs={12} md={6} lg={4} key={member.id}>
                 <StaffCard
                   name={member.name}
@@ -74,7 +74,7 @@ const ITTeam = () => {
                   image={member.image}
                   message={member.message}
                   email={member.email}
-                  department={itDept.name}
+                  department={laboratoryDept.name}
                 />
               </Grid>
             ))}
@@ -150,4 +150,4 @@ const ITTeam = () => {
   );
 };
 
-export default ITTeam; 
+export default LaboratoryTeam; 
