@@ -96,7 +96,7 @@ const OperationsFlowPage = () => {
   const onNodeClick = useCallback(
     (event, node) => {
       setCenter(node.position.x + node.width / 2, node.position.y + node.height / 2, {
-        zoom: 1.2,
+        zoom: 2,
         duration: 500,
       });
     },
@@ -142,7 +142,7 @@ const OperationsFlowPage = () => {
         zoom={1}
         fitViewOptions={{ padding: 0.1 }}
         minZoom={0.7}
-        maxZoom={1.5}
+        maxZoom={2}
         translateExtent={[[-200, -200], [1300, 1800]]}
         attributionPosition="bottom-left"
         proOptions={{ hideAttribution: true }}
