@@ -91,7 +91,7 @@ const Home = () => {
         <Container maxWidth="lg">
           <Grid container spacing={4} textAlign="center">
             <Grid item xs={12} md={3}>
-              <Typography variant="h2" sx={{ fontWeight: 700, mb: 1 }}>
+              <Typography variant="h2_highlight" sx={{ fontWeight: 700, mb: 1 }}>
                 30+
               </Typography>
               <Typography variant="h6">
@@ -99,7 +99,7 @@ const Home = () => {
               </Typography>
             </Grid>
             <Grid item xs={12} md={3}>
-              <Typography variant="h2" sx={{ fontWeight: 700, mb: 1 }}>
+              <Typography variant="h2_highlight" sx={{ fontWeight: 700, mb: 1 }}>
                 4M+
               </Typography>
               <Typography variant="h6">
@@ -107,7 +107,7 @@ const Home = () => {
               </Typography>
             </Grid>
             <Grid item xs={12} md={3}>
-              <Typography variant="h2" sx={{ fontWeight: 700, mb: 1 }}>
+              <Typography variant="h2_highlight" sx={{ fontWeight: 700, mb: 1 }}>
                 100%
               </Typography>
               <Typography variant="h6">
@@ -115,7 +115,7 @@ const Home = () => {
               </Typography>
             </Grid>
             <Grid item xs={12} md={3}>
-              <Typography variant="h2" sx={{ fontWeight: 700, mb: 1 }}>
+              <Typography variant="h2_highlight" sx={{ fontWeight: 700, mb: 1 }}>
                 95.7% Score
               </Typography>
               <Typography variant="h6">
@@ -140,24 +140,22 @@ const Home = () => {
             alignItems: 'center', 
             gap: 6,
             backgroundColor: 'background.paper',
-            borderRadius: 3,
+            // borderRadius: 3,
             p: { xs: 4, md: 6 },
             boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
           }}
         >
-          <Box sx={{ flex: { lg: '0 0 300px' } }}>
-            <OptimizedImage
-              src={home.ceoMessage.image}
-              alt={home.ceoMessage.name}
-              width={300}
-              height={300}
-              sx={{
-                borderRadius: '50%',
-                border: '6px solid',
-                borderColor: 'primary.main',
-              }}
-            />
-          </Box>
+          <OptimizedImage
+            src={home.ceoMessage.image}
+            alt={home.ceoMessage.name}
+            width={300}
+            height={300}
+            sx={{
+              // borderRadius: '50%',
+              // border: '6px solid',
+              borderColor: 'primary.main',
+            }}
+          />
           
           <Box sx={{ flex: 1, textAlign: { xs: 'center', lg: 'left' } }}>
             <Typography 
