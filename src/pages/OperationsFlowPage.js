@@ -16,29 +16,23 @@ import { Box, Typography, Paper, Button } from '@mui/material';
 import CustomFlowNode from '../components/common/CustomFlowNode';
 import CustomFlowEdge from '../components/common/CustomFlowEdge';
 import { imageAssets } from '../data/imageAssets';
-import PrimaryClarifier from '../assets/images/operationsflow/Primary_Clarifier.jpg';
-import SecondaryClarifier from '../assets/images/operationsflow/Secondary_Clarifier.jpg';
-import SecondaryClarifier2 from '../assets/images/operationsflow/Secondary_Clarifier_2.jpg';
-import TertiaryAndUVTreatment from '../assets/images/operationsflow/Tertiary_and_UV_treatment.jpg';
-import TertiaryAndUVTreatment2 from '../assets/images/operationsflow/Tertiary_and_UV_treatment_2.jpg';
-import Digestor from '../assets/images/operationsflow/Digestor.jpg';
-import OxidationDitch from '../assets/images/operationsflow/Oxidation_ditch.jpg';
+
 
 const initialNodes = [
   { id: '1', position: { x: 400, y: 0 }, data: { label: 'Raw Influent', description: 'Wastewater enters the plant.', image: imageAssets.placeholders.card }, type: 'custom' },
-  { id: '2', position: { x: 400, y: 200 }, data: { label: 'Preliminary', description: 'Removal of large debris.', image: imageAssets.placeholders.card }, type: 'custom' },
-  { id: '3', position: { x: 400, y: 400 }, data: { label: 'Primary', description: 'Settling of solids.', image:PrimaryClarifier  }, type: 'custom' },
-  { id: '4', position: { x: 400, y: 600 }, data: { label: 'Oxidation Ditch', description: 'Biological treatment.', image: OxidationDitch }, type: 'custom' },
-  { id: '5', position: { x: 0, y: 725 }, data: { label: 'Secondary', description: 'Further clarification.', image: SecondaryClarifier }, type: 'custom' },
-  { id: '6', position: { x: 400, y: 800 }, data: { label: 'Secondary Clarifiers', description: 'Separates activated sludge.', image: SecondaryClarifier2}, type: 'custom' },
+  { id: '2', position: { x: 400, y: 200 }, data: { label: 'Preliminary', description: 'Removal of large debris.', image: imageAssets.operationsflow.preliminaryTreatment }, type: 'custom' },
+  { id: '3', position: { x: 400, y: 400 }, data: { label: 'Primary', description: 'Settling of solids.', image:imageAssets.operationsflow.primaryClarifier  }, type: 'custom' },
+  { id: '4', position: { x: 400, y: 600 }, data: { label: 'Oxidation Ditch', description: 'Biological treatment.', image: imageAssets.operationsflow.oxidationDitch }, type: 'custom' },
+  { id: '5', position: { x: 0, y: 725 }, data: { label: 'Secondary', description: 'Further clarification.', image: imageAssets.operationsflow.secondaryClarifier }, type: 'custom' },
+  { id: '6', position: { x: 400, y: 800 }, data: { label: 'Secondary Clarifiers', description: 'Separates activated sludge.', image: imageAssets.operationsflow.secondaryClarifier2}, type: 'custom' },
   { id: '7', position: { x: 850, y: 600 }, data: { label: 'RAS/WAS Station', description: 'Return/Waste Activated Sludge.', image: imageAssets.placeholders.card }, type: 'custom' },
-  { id: '8', position: { x: 400, y: 1000 }, data: { label: 'Tertiary', description: 'Advanced nutrient removal.', image: TertiaryAndUVTreatment }, type: 'custom' },
-  { id: '9', position: { x: 400, y: 1200 }, data: { label: 'Final (UV)', description: 'Disinfection with UV light.', image: TertiaryAndUVTreatment2 }, type: 'custom' },
+  { id: '8', position: { x: 400, y: 1000 }, data: { label: 'Tertiary', description: 'Advanced nutrient removal.', image: imageAssets.operationsflow.tertiaryAndUvTreatment }, type: 'custom' },
+  { id: '9', position: { x: 400, y: 1200 }, data: { label: 'Final (UV)', description: 'Disinfection with UV light.', image: imageAssets.operationsflow.tertiaryAndUvTreatment2 }, type: 'custom' },
   { id: '10', position: { x: 400, y: 1400 }, data: { label: 'Final Effluent', description: 'Treated water is discharged.', image: imageAssets.placeholders.card }, type: 'custom' },
-  { id: '11', position: { x: 1000, y: 800 }, data: { label: 'Gravity Belt Thickener', description: 'Thickens sludge.', image: imageAssets.placeholders.card }, type: 'custom' },
-  { id: '12', position: { x: 850, y: 1000 }, data: { label: 'Digestor', description: 'Sludge stabilization.', image: Digestor}, type: 'custom' },
+  { id: '11', position: { x: 1000, y: 800 }, data: { label: 'Gravity Belt Thickener', description: 'Thickens sludge.', image: imageAssets.operationsflow.gravityBeltThickener }, type: 'custom' },
+  { id: '12', position: { x: 850, y: 1000 }, data: { label: 'Digestor', description: 'Sludge stabilization.', image: imageAssets.operationsflow.digestor}, type: 'custom' },
   { id: '13', position: { x: 850, y: 1200 }, data: { label: 'Belt Press', description: 'Dewatering of sludge.', image: imageAssets.placeholders.card }, type: 'custom' },
-  { id: '14', position: { x: 850, y: 1400 }, data: { label: 'Land Application', description: 'Biosolids processing.', image: imageAssets.placeholders.card }, type: 'custom' },
+  { id: '14', position: { x: 850, y: 1400 }, data: { label: 'Land Application', description: 'Biosolids processing.', image: imageAssets.operationsflow.landApplication }, type: 'custom' },
 ].map(node => ({ ...node, sourcePosition: 'bottom', targetPosition: 'top' }));
 
 const initialEdges = [
@@ -128,7 +122,13 @@ const OperationsFlowPage = () => {
   }));
 
   return (
-    <Box sx={{ height: '90vh', width: '100%', position: 'relative' }}>
+    <Box
+      sx={{
+        height: '90vh',
+        width: '100%',
+        position: 'relative',
+      }}
+    >
       <ReactFlow
         nodes={nodes}
         edges={edgesWithData}
@@ -146,7 +146,27 @@ const OperationsFlowPage = () => {
         translateExtent={[[-200, -200], [1300, 1800]]}
         attributionPosition="bottom-left"
         proOptions={{ hideAttribution: true }}
+        style={{
+          backgroundColor: '#c9c9c9',
+          position: 'relative',
+        }}
       >
+        {/* Custom background image with opacity */}
+        <Box
+          sx={{
+            pointerEvents: 'none',
+            position: 'absolute',
+            inset: 0,
+            zIndex: 0,
+            backgroundImage: 'url("images/arch_plant.jpg")',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center',
+            backgroundSize: 'contain',
+            opacity: 0.55,
+            width: '100%',
+            height: '100%',
+          }}
+        />
         <Controls />
         <Background color="#aaa" gap={16} />
       </ReactFlow>
