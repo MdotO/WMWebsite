@@ -25,36 +25,37 @@ const CustomFlowNode = ({ data, selected }) => (
     }}
     tabIndex={0}
   >
-    <Box
-      sx={{
-        flex: '0 0 120px',
-        background: 'linear-gradient(135deg, #1976d2 60%, #42a5f5 100%)',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}
-    >
+    {data.image ? (
       <Box
         sx={{
-          width: "100%",
-          height: "100%",
-          backgroundImage: `url(${data.image})`,
-          backgroundSize: 'contain',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          backgroundColor: '#fff',
-
+          flex: '0 0 120px',
+          background: 'linear-gradient(135deg, #1976d2 60%, #42a5f5 100%)',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
         }}
-      />
-    </Box>
+      >
+        <Box
+          sx={{
+            width: "100%",
+            height: "100%",
+            backgroundImage: `url(${data.image})`,
+            backgroundSize: 'contain',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            backgroundColor: '#fff',
+          }}
+        />
+      </Box>
+    ) : null}
     <Box sx={{ p: 2, flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', overflow: 'hidden' }}>
       <Typography variant="h6" sx={{ fontWeight: 700, color: '#1976d2', mb: 0.5, flexShrink: 0 }}>
         {data.label}
       </Typography>
       <Box sx={{ overflowY: 'auto', flexGrow: 1, '&::-webkit-scrollbar': { width: '4px' }, '&::-webkit-scrollbar-thumb': { background: '#ccc', borderRadius: '2px' } }}>
-          <Typography variant="body2" sx={{ color: '#546e7a', fontSize: '0.875rem' }}>
-            {data.description}
-          </Typography>
+        <Typography variant="body2" sx={{ color: '#546e7a', fontSize: '0.875rem' }}>
+          {data.description}
+        </Typography>
       </Box>
     </Box>
     <Handle type="target" position={Position.Top} id="top-target" style={{ ...handleStyle, left: '35%' }} />
