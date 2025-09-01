@@ -5,8 +5,8 @@ export const siteContent = {
     name: "John P. Williams Plant",
     tagline: "Leading Waste Water Management Excellence",
     contact: {
-      email: "pusp@portage-in.com",
-      phone: "+1 (219) 162-1301",
+      email: "cwalton@portage-in.com",
+      phone: "219 762-1301",
       address: "5500 Old Porter Road, Portage, IN 46368"
     }
   },
@@ -21,7 +21,7 @@ export const siteContent = {
       name: "Austin Bonta",
       title: "Mayor",
       message: "At John P. Williams Plant, we are committed to creating innovative and sustainable water management solutions that protect our environment while meeting the needs of our communities.",
-      image: imageAssets.staff.ceo
+      image: imageAssets.staff.mayor
     }
   },
 
@@ -41,7 +41,7 @@ export const siteContent = {
       head: {
         name: "Tracie Marshall",
         title: "General Superintendant",
-        image: imageAssets.placeholders.avatar,
+        image: imageAssets.staff.Tracie,
         message: "Our administration team provides strategic leadership and ensures that John P. Williams Plant maintains the highest standards of corporate governance, financial management, and stakeholder relations. We are committed to transparency, ethical business practices, and sustainable growth that benefits all our stakeholders.",
         email: "TMarshall@portage-in.com"
       },
@@ -56,14 +56,14 @@ export const siteContent = {
         }
       ]
     },
-    it: {
+    laboratory: {
       name: "Laboratory Services",
       description: "Monitoring, testing, and process assurance",
       icon: "Microscope",
       head: {
         name: "Rebecca Gaines",
         title: "Lab Supervisor",
-        image: imageAssets.staff.robert,
+        image: imageAssets.staff.Rebecca,
         message: "Our lab team ensures the integrity of water treatment through advanced analysis monitoring and verification processes delivering reliable data that supports operational excellence and regulatory compliance.",
         email: "r.thompson@portage-in.com"
       },
