@@ -94,14 +94,12 @@ const AboutUs = () => {
               align="left"
             />
           </Grid>
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={5}>
             <OptimizedImage
               src={imageAssets.backgrounds.laboratory}
               alt="John P. Williams Plant Laboratory"
-              sx={{
-                borderRadius: 3,
-                boxShadow: '0 12px 24px rgba(0,0,0,0.15)',
-              }}
+
+              disablePulse={true}
             />
           </Grid>
         </Grid>
