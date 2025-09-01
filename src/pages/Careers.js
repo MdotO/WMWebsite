@@ -316,7 +316,7 @@ const Careers = () => {
         <Container maxWidth="lg">
           <Grid container spacing={6} alignItems="center">
             <Grid item xs={12} md={6}>
-              <Typography variant="h3_white" gutterBottom sx={{ fontWeight: 600 }}>
+              <Typography variant="h3" gutterBottom sx={{ fontWeight: 600, color: 'black' }}>
                 Our Culture
               </Typography>
               <Typography variant="h6" sx={{ mb: 3, opacity: 0.9 }}>
@@ -329,6 +329,7 @@ const Careers = () => {
                   </ListItemIcon>
                   <ListItemText 
                     primary="Collaborative Environment"
+                    primaryTypographyProps={{ sx: { color: 'black' } }}
                     secondary="Work with diverse teams on challenging projects"
                     secondaryTypographyProps={{ sx: { color: 'rgba(255,255,255,0.7)' } }}
                   />
@@ -339,6 +340,7 @@ const Careers = () => {
                   </ListItemIcon>
                   <ListItemText 
                     primary="Continuous Learning"
+                    primaryTypographyProps={{ sx: { color: 'black' } }}
                     secondary="Ongoing training and development opportunities"
                     secondaryTypographyProps={{ sx: { color: 'rgba(255,255,255,0.7)' } }}
                   />
@@ -349,6 +351,7 @@ const Careers = () => {
                   </ListItemIcon>
                   <ListItemText 
                     primary="Work-Life Balance"
+                    primaryTypographyProps={{ sx: { color: 'black' } }}
                     secondary="Flexible schedules and remote work options"
                     secondaryTypographyProps={{ sx: { color: 'rgba(255,255,255,0.7)' } }}
                   />
