@@ -9,6 +9,9 @@ import OxidationDitch from '../assets/images/operationsflow/Oxidation_ditch.jpg'
 import PreliminaryTreatment from '../assets/images/operationsflow/Preliminary_Treatment.jpg';
 import GravityBeltThickener from '../assets/images/operationsflow/Gravity_Belt_Thickener.jpg';
 import LandApplication from '../assets/images/operationsflow/Land_Application.jpg';
+import BeltPress from '../assets/images/operationsflow/Belt_Press.jpg';
+import RawInfluent from '../assets/images/operationsflow/Raw_Influent.jpg';
+import Effluent from '../assets/images/operationsflow/Effluent.jpg';
 import JP_About from '../assets/images/pagebg/JP_About.jpeg';
 // import Tracie from '../../public/images/staff/Tracie.jpg';
 // import Rebecca from '../assets/images/staff/Rebecca.jpg';
@@ -68,6 +71,9 @@ export const imageAssets = {
     preliminaryTreatment: PreliminaryTreatment,
     gravityBeltThickener: GravityBeltThickener,
     landApplication: LandApplication,
+    beltPress: BeltPress,
+    rawInfluent: RawInfluent,
+    effluent: Effluent,
   },
 };
 
