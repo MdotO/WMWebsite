@@ -35,7 +35,7 @@ const AboutUs = () => {
     {
       icon: <Nature sx={{ fontSize: 40 }} />,
       title: "Sustainability in Action",
-      description: "We prioritize environmentally responsible practices — from phosphorus capture and ammonia reduction to solar-powered sludge treatment — ensuring long-term ecological balance."
+      description: "We prioritize environmentally responsible practices — from phosphorus capture and ammonia reduction to solar-powered treatment and sludge processing — ensuring long-term ecological balance."
     },
     {
       icon: <Biotech sx={{ fontSize: 40 }} />,
@@ -55,11 +55,11 @@ const AboutUs = () => {
   ];
 
   const achievements = [
-    "ISO 14001 Environmental Management Certification",
-    "EPA Excellence in Environmental Stewardship Award",
-    "Leading provider of municipal water treatment solutions",
-    "Zero environmental violations in company history",
-    "Partnerships with top environmental research institutions"
+    "Certified under IDEM's Laboratory Proficiency Testing Program with zero failures.",
+    "95.7% score in IWEA Laboratory Excellence Audit.",
+    "Recognized provider of municipal water and wastewater treatment solutions.",
+    "Consistent collaboration with top-tier environmental research institutions.",
+    "Approved for State Revolving Fund (SRF) financing in two consecutive cycles"
   ];
 
   return (

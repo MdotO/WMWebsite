@@ -26,7 +26,7 @@ const initialNodes = [
   { id: '5', position: { x: 0, y: 725 }, data: { label: 'Secondary', description: 'Further clarification.', image: imageAssets.operationsflow.secondaryClarifier }, type: 'custom' },
   { id: '6', position: { x: 400, y: 800 }, data: { label: 'Secondary Clarifiers', description: 'Separates activated sludge.', image: imageAssets.operationsflow.secondaryClarifier2}, type: 'custom' },
   { id: '7', position: { x: 850, y: 600 }, data: { label: 'RAS/WAS Station', description: 'Return/Waste Activated Sludge.'}, type: 'custom' },
-  { id: '8', position: { x: 400, y: 1000 }, data: { label: 'Tertiary', description: 'Advanced nutrient removal.', image: imageAssets.operationsflow.tertiaryAndUvTreatment }, type: 'custom' },
+  { id: '8', position: { x: 400, y: 1000 }, data: { label: 'Tertiary', description: 'Advanced solids removal.', image: imageAssets.operationsflow.tertiaryAndUvTreatment }, type: 'custom' },
   { id: '9', position: { x: 400, y: 1200 }, data: { label: 'Final (UV)', description: 'Disinfection with UV light.', image: imageAssets.operationsflow.tertiaryAndUvTreatment2 }, type: 'custom' },
   { id: '10', position: { x: 400, y: 1400 }, data: { label: 'Final Effluent', description: 'Treated water is discharged.', image: imageAssets.operationsflow.effluent }, type: 'custom' },
   { id: '11', position: { x: 1000, y: 800 }, data: { label: 'Gravity Belt Thickener', description: 'Thickens sludge.', image: imageAssets.operationsflow.gravityBeltThickener }, type: 'custom' },
