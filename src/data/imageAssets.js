@@ -48,7 +48,7 @@ export const imageAssets = {
   // Backgrounds and patterns
   backgrounds: {
     waterPattern: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
-    laboratory: 'https://images.unsplash.com/photo-1582719471384-894fbb16e074?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
+    laboratory: "/images/About_Us_Lab.jpg",
     office: 'https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
   },
 
