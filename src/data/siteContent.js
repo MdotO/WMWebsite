@@ -39,10 +39,11 @@ export const siteContent = {
       description: "Strategic leadership and corporate governance",
       icon: "Business",
       head: {
-        name: "Tracie Marshall",
+        name: "Tracie Marshal",
         title: "General Superintendant",
         image: imageAssets.staff.Tracie,
-        message: "Our administration team provides strategic leadership and ensures that John P. Williams Plant maintains the highest standards of corporate governance, financial management, and stakeholder relations. We are committed to transparency, ethical business practices, and sustainable growth that benefits all our stakeholders.",
+        message: "Our wastewater tratement plant  is more than just infrastructure — it's a vital part of protecting public health and our environment. Every drop that comes through here is carefully treated by our dedicated team to ensure clean water returns to the community and to nature. We take pride in providing reliable service 24/7, becuase safe water is something everone depends on." 
+        ,
         email: "TMarshall@portage-in.com"
       },
       staff: [
@@ -78,7 +79,7 @@ export const siteContent = {
         },
         {
           id: 5,
-          name: "Randy McDonald",
+          name: "Randy Wilkening Jr.",
           title: "Lead Laboratory Analyst",
           image: imageAssets.placeholders.avatar,
           message: "Supporting our laboratory operations by assisting with sample analysis, maintaining equipment, and ensuring our testing processes meet quality standards.",
