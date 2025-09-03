@@ -78,6 +78,7 @@ const Footer = () => {
                     transform: 'translateY(-2px)',
                   },
                 }}
+                href="https://www.linkedin.com/company/john-p-williams-plant/"
               >
                 <LinkedIn />
               </IconButton>
