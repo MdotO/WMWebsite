@@ -102,6 +102,7 @@ const Footer = () => {
                     transform: 'translateY(-2px)',
                   },
                 }}
+                href="https://www.facebook.com/share/1Au5mZX6mK/"
               >
                 <Facebook />
               </IconButton>
