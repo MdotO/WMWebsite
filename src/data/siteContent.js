@@ -42,7 +42,7 @@ export const siteContent = {
         name: "Tracie Marshal",
         title: "General Superintendant",
         image: imageAssets.staff.Tracie,
-        message: "Our wastewater tratement plant  is more than just infrastructure — it's a vital part of protecting public health and our environment. Every drop that comes through here is carefully treated by our dedicated team to ensure clean water returns to the community and to nature. We take pride in providing reliable service 24/7, because safe water is something everone depends on." 
+        message: "Our wastewater treatment plant  is more than just infrastructure — it's a vital part of protecting public health and our environment. Every drop that comes through here is carefully treated by our dedicated team to ensure clean water returns to the community and to nature. We take pride in providing reliable service 24/7, because safe water is something everone depends on." 
         ,
         email: "TMarshall@portage-in.com"
       },
