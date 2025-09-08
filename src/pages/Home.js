@@ -6,7 +6,7 @@ import {
   Grid,
   Button,
 } from '@mui/material';
-import { Water, Nature, Engineering, ArrowForward, Public } from '@mui/icons-material';
+import { Water, Nature, ArrowForward, Public } from '@mui/icons-material';
 import { siteContent } from '../data/siteContent';
 import { 
   FeatureBanner, 
@@ -16,7 +16,7 @@ import {
 } from '../components/common';
 
 const Home = () => {
-  const { home, company } = siteContent;
+  const { home } = siteContent;
 
   const services = [
     {

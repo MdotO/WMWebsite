@@ -1,6 +1,6 @@
 import React from 'react';
 import { Handle, Position } from 'reactflow';
-import { Card, Box, Typography, Avatar } from '@mui/material';
+import { Card, Box, Typography } from '@mui/material';
 
 const handleStyle = { width: 8, height: 8, zIndex: 10, background: 'transparent', border: 'none' };
 

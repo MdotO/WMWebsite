@@ -5,16 +5,11 @@ import {
   Typography,
   Grid,
   Card,
-  CardContent,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
+  CardContent
 } from '@mui/material';
 import {
   CheckCircle,
   Nature,
-  Engineering,
   Science,
   Groups,
   Biotech,

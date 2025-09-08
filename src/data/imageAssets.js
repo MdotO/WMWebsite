@@ -29,7 +29,6 @@ export const imageAssets = {
   // Staff photos (professional placeholders)
   staff: {
     ceo: 'https://www.chicagotribune.com/wp-content/uploads/2024/02/PTB-L-PTG-STATE-CITY-0215-CT0134240115.jpg?w=1080',
-    Tracie: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
     Karl: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
     Candice: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
     Becki: 'https://images.unsplash.com/photo-1509967419530-da38b4704bc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',

@@ -1,5 +1,5 @@
 
-import React, { useCallback, useEffect } from 'react';
+import React, { useCallback } from 'react';
 import ReactFlow, {
   useNodesState,
   useEdgesState,
@@ -66,7 +66,7 @@ const FlowProvider = ({ children }) => (
 );
 
 const OperationsFlowPage = () => {
-  const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
+  const [nodes, onNodesChange] = useNodesState(initialNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
   const { setCenter } = useReactFlow();
 

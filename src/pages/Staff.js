@@ -5,11 +5,9 @@ import {
   Typography,
   Grid,
   Card,
-  CardContent,
   Chip,
-  Button,
 } from '@mui/material';
-import { Business, Computer, Engineering, ArrowForward, Science } from '@mui/icons-material';
+import { Business, Engineering, Science } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import { siteContent } from '../data/siteContent';
 import { 

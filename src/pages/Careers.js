@@ -5,8 +5,6 @@ import {
   Typography,
   Grid,
   Card,
-  CardContent,
-  Chip,
   Button,
   List,
   ListItem,
@@ -21,8 +19,6 @@ import {
   School,
   LocalHospital,
   DirectionsCar,
-  Restaurant,
-  FilterList,
   TrendingUp,
   Security,
 } from '@mui/icons-material';

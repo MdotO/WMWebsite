@@ -2,17 +2,14 @@ import React, { useState, useEffect } from 'react';
 import {
   AppBar,
   Toolbar,
-  Typography,
   Button,
   Box,
   IconButton,
   Drawer,
   List,
   ListItem,
-  ListItemText,
   useTheme,
   useMediaQuery,
-  Fade,
   Menu,
   MenuItem,
   ListItemIcon,
@@ -21,13 +18,11 @@ import {
   Menu as MenuIcon, 
   Close as CloseIcon,
   Business,
-  Computer,
   Engineering,
   ExpandMore,
   Science,
 } from '@mui/icons-material';
 import { Link, useLocation } from 'react-router-dom';
-import { siteContent } from '../data/siteContent';
 import Logo from './common/Logo';
 
 const Navbar = () => {
