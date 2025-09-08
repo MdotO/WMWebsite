@@ -57,7 +57,7 @@ const nodeTypes = {
   custom: CustomFlowNode,
 };
 
-const showDevTools = true;
+const showDevTools = false;
 
 const FlowProvider = ({ children }) => (
   <ReactFlowProvider>
