@@ -130,7 +130,7 @@ export const siteContent = {
   careers: [
     {
       id: 1,
-      title: "Shift Operator",
+      title: "Shift Operator (Not Accepting Applications Anymore)",
       department: "Operations",
       location: "5500 Old Porter Road, IN",
       type: "Full-time",
