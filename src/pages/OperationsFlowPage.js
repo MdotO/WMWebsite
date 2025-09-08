@@ -66,7 +66,7 @@ const FlowProvider = ({ children }) => (
 );
 
 const OperationsFlowPage = () => {
-  const [nodes,_, onNodesChange] = useNodesState(initialNodes);
+  const [nodes, , onNodesChange] = useNodesState(initialNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
   const { setCenter } = useReactFlow();
 
